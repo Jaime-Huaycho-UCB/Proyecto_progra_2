@@ -1,6 +1,5 @@
 package Controlador;
 
-import javax.swing.JOptionPane;
 
 import Librerias.Libreria;
 import Modelo.BaseDatos;
@@ -18,7 +17,6 @@ public class Aplicacion {
     }
 
     public static void IniciarPrograma(){
-        //JOptionPane.showMessageDialog(null,"ihfbdisjnkl");
         PantallaInicio ventanaPantallaInicio = new PantallaInicio();
         ventanaPantallaInicio.setLocationRelativeTo(null);
         ventanaPantallaInicio.setVisible(true);
