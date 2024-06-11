@@ -3,6 +3,7 @@ package Librerias;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -238,4 +239,9 @@ public class Libreria {
         }
     }
     // Fin - Funciones tiempo
+
+    public void CambiarPantalla(JFrame pantalla){
+        pantalla.setLocationRelativeTo(null);
+        pantalla.setVisible(true);
+    }
 }

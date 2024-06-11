@@ -18,8 +18,7 @@ public class Aplicacion {
 
     public static void IniciarPrograma(){
         PantallaInicio ventanaPantallaInicio = new PantallaInicio();
-        ventanaPantallaInicio.setLocationRelativeTo(null);
-        ventanaPantallaInicio.setVisible(true);
+        lib.CambiarPantalla(ventanaPantallaInicio);
     }
 }
 
