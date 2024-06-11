@@ -8,8 +8,8 @@ public class BaseDatos {
 
     public Libreria lib = new Libreria();
     private final String url = "jdbc:mysql://192.168.1.190:3306/ProyectoProgra2";
-    private final String usuario = "root";
-    private final String contrasena = "";
+    private final String usuario = "Jaime";
+    private final String contrasena = "override";
 
     private Connection conexion=null;
 
