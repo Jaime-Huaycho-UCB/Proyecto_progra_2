@@ -97,7 +97,7 @@ public class Libreria {
     public int RandomEntero(int a,int b) {
         return (int)(Math.random() * (b - a + 1)) + a;
     }
-    public static double LimitarDecimales(double numero, int decimales) {
+    public double LimitarDecimales(double numero, int decimales) {
         double factor = Math.pow(10, decimales);
         double numeroRedondeado = Math.round(numero * factor) / factor;
         return numeroRedondeado;

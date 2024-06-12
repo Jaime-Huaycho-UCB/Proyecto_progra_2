@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Librerias.Libreria;
 import Vista.PantallaInicio;
 
 import javax.swing.JLabel;
@@ -14,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MenuIngresarACuenta extends JFrame {
+
+	public Libreria lib = new Libreria();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -66,6 +69,8 @@ public class MenuIngresarACuenta extends JFrame {
 		JButton BotonCalcularInteres = new JButton("Calcular interes");
 		BotonCalcularInteres.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lib.CambiarPantalla(new CalcularInteres(getNumeroCuenta()));
+				dispose();
 			}
 		});
 		BotonCalcularInteres.setBounds(221, 393, 245, 95);

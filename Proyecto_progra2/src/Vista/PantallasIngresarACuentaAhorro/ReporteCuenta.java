@@ -191,12 +191,11 @@ public class ReporteCuenta extends JFrame {
 		System.out.println("fase 1");
 		String query = "select PERSONAS.nombre,PERSONAS.apellidoPaterno,PERSONAS.apellidoMaterno,CUENTAS_AHORRO.numeroCuenta,PERSONAS.ci,TIPOS_CUENTA.nombre as nombreTipoCuenta,TIPOS_CUENTA.tipoInteres,CUENTAS_AHORRO.fechaApertura,TIPOS_CUENTA.interes,CUENTAS_AHORRO.saldo "+
 					"from CUENTAS_AHORRO,PERSONAS,TIPOS_CUENTA "+
-					"where CUENTAS_AHORRO.ciPersona=PERSONAS.ci and CUENTAS_AHORRO.numeroCuenta="+getNumeroCuenta();
+					"where CUENTAS_AHORRO.ciPersona=PERSONAS.ci and TIPOS_CUENTA.id=CUENTAS_AHORRO.tipo and CUENTAS_AHORRO.numeroCuenta="+getNumeroCuenta();
 		try {
 			PreparedStatement consulta = base.getConexion().prepareStatement(query);
 			ResultSet ejecutar = consulta.executeQuery();
 			while (ejecutar.next()) {
-
 				SalidaNumeroCuenta.setText(""+ejecutar.getInt("numeroCuenta"));
 				SalidaCi.setText(""+ejecutar.getInt("ci"));
 				SalidaTipoCuenta.setText(""+ejecutar.getString("nombreTipoCuenta"));
