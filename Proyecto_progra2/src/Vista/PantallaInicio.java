@@ -15,6 +15,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.Canvas;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
 
 public class PantallaInicio extends JFrame {
 	public Libreria lib = new Libreria();
@@ -22,29 +26,24 @@ public class PantallaInicio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField txtGoliathBankGfxfgxrtxtrrt;
 
 	public PantallaInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 722, 394);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(127, 44, 37));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("GOLIATH NATIONAL BANK");
-		lblNewLabel.setBackground(new Color(250, 255, 252));
-		lblNewLabel.setForeground(new Color(226, 231, 229));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 33));
-		lblNewLabel.setBounds(6, 32, 715, 53);
-		contentPane.add(lblNewLabel);
+		
 		
 		
 		
 		JButton BotonIngresarCuenta = new JButton("CLIENTE");
-		BotonIngresarCuenta.setForeground(new Color(254, 255, 249));
+		BotonIngresarCuenta.setForeground(new Color(0, 0, 0));
 		BotonIngresarCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SeleccionCuenta ventanaSeleccionCuenta = new SeleccionCuenta();
@@ -57,7 +56,8 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(BotonIngresarCuenta);
 		
 		JButton BotonAdministrar = new JButton("ADMINISTRACION");
-		BotonAdministrar.setForeground(new Color(254, 255, 249));
+		BotonAdministrar.setBackground(new Color(255, 146, 0));
+		BotonAdministrar.setForeground(new Color(9, 18, 17));
 		BotonAdministrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new LogIn());
@@ -69,7 +69,7 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(BotonAdministrar);
 		
 		JButton btnNewButton = new JButton("SALIR");
-		btnNewButton.setForeground(new Color(254, 255, 249));
+		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -78,5 +78,26 @@ public class PantallaInicio extends JFrame {
 		});
 		btnNewButton.setBounds(284, 237, 140, 45);
 		contentPane.add(btnNewButton);
+		
+		
+		
+		txtGoliathBankGfxfgxrtxtrrt = new JTextField();
+		txtGoliathBankGfxfgxrtxtrrt.setForeground(new Color(254, 255, 255));
+		txtGoliathBankGfxfgxrtxtrrt.setFont(new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 28));
+		txtGoliathBankGfxfgxrtxtrrt.setBackground(new Color(4, 50, 255));
+		txtGoliathBankGfxfgxrtxtrrt.setText("                GOLIATH  NATIONAL BANK");
+		txtGoliathBankGfxfgxrtxtrrt.setBounds(0, 0, 722, 91);
+		contentPane.add(txtGoliathBankGfxfgxrtxtrrt);
+		txtGoliathBankGfxfgxrtxtrrt.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBounds(111, 249, 61, 16);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("/Users/jaimehuaycho/Downloads/1631338443895.jpeg"));
+		lblNewLabel_1.setBounds(0, 268, 200, 98);
+		contentPane.add(lblNewLabel_1);
 	}
 }
