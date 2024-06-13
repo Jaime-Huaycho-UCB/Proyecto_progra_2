@@ -87,6 +87,16 @@ public class MenuIngresarACuenta extends JFrame {
 		});
 		BotonVolver_1.setBounds(221, 525, 245, 95);
 		contentPane.add(BotonVolver_1);
+		
+		JButton BotonTransferenciaBancaria = new JButton("New button");
+		BotonTransferenciaBancaria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lib.CambiarPantalla(new TransfereciasBancarias(getNumeroCuenta()));
+				dispose();
+			}
+		});
+		BotonTransferenciaBancaria.setBounds(524, 238, 117, 29);
+		contentPane.add(BotonTransferenciaBancaria);
 	}
 
 }

@@ -27,7 +27,7 @@ public class PantallaInicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 722, 394);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(79, 10, 5));
+		contentPane.setBackground(new Color(127, 44, 37));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -44,7 +44,7 @@ public class PantallaInicio extends JFrame {
 		
 		
 		JButton BotonIngresarCuenta = new JButton("CLIENTE");
-		BotonIngresarCuenta.setForeground(new Color(0, 0, 0));
+		BotonIngresarCuenta.setForeground(new Color(254, 255, 249));
 		BotonIngresarCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SeleccionCuenta ventanaSeleccionCuenta = new SeleccionCuenta();
@@ -57,7 +57,7 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(BotonIngresarCuenta);
 		
 		JButton BotonAdministrar = new JButton("ADMINISTRACION");
-		BotonAdministrar.setForeground(new Color(0, 0, 0));
+		BotonAdministrar.setForeground(new Color(254, 255, 249));
 		BotonAdministrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new LogIn());
@@ -69,7 +69,7 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(BotonAdministrar);
 		
 		JButton btnNewButton = new JButton("SALIR");
-		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setForeground(new Color(254, 255, 249));
 		btnNewButton.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
