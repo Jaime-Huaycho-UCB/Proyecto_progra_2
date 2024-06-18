@@ -3,7 +3,7 @@ package Vista.PantallasAdministracionPrograma.PantallasTIposCuenta;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+
 
 import Librerias.Libreria;
 import Modelo.BaseDatos;
@@ -18,6 +18,11 @@ import java.sql.ResultSet;
 
 import java.awt.event.*;
 
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.ImageIcon;
 public class EliminarTipoCuenta extends JFrame {
 
 	public Libreria lib = new Libreria();
@@ -31,52 +36,107 @@ public class EliminarTipoCuenta extends JFrame {
 
 	public EliminarTipoCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 576, 345);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setBounds(100, 100, 576, 345);
+        setTitle("Eliminar Tipo de Cuenta");
 
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+        JPanel panelFondo = new JPanel();
+        panelFondo.setBounds(0, 0, 535, 414);
+        panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+        contentPane.add(panelFondo);
+        panelFondo.setLayout(null);
 
-		addWindowListener(new WindowAdapter() {
+        JPanel panelRojo = new JPanel();
+        panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
+        panelRojo.setBounds(0, 0, 535, 113);
+        panelFondo.add(panelRojo);
+        panelRojo.setLayout(null);
+
+        addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-				base.CerrarConexion();
-				dispose();
+                base.CerrarConexion();
+                dispose();
             }
         });
-		
-		JLabel lblNewLabel = new JLabel("Eliminar un tipo de cuenta");
-		lblNewLabel.setBounds(173, 36, 213, 57);
-		contentPane.add(lblNewLabel);
-		
-		EntradaTipoCuenta = new JComboBox<String>();
-		EntradaTipoCuenta.setBounds(115, 123, 340, 27);
-		contentPane.add(EntradaTipoCuenta);
-		
-		JButton BotonVolver = new JButton("Volver");
-		BotonVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				base.CerrarConexion();
-				MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
-				ventanaMenuTipoCuenta.setLocationRelativeTo(null);
-				ventanaMenuTipoCuenta.setVisible(true);
-				dispose();
-			}
-		});
-		BotonVolver.setBounds(115, 221, 117, 29);
-		contentPane.add(BotonVolver);
-		
-		JButton BotonEliminar = new JButton("Eliminar");
-		BotonEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AccionEliminarTipoCuenta();
-			}
-		});
-		BotonEliminar.setBounds(338, 221, 117, 29);
-		contentPane.add(BotonEliminar);
-		LLenarListaTipoCuenta();
+
+        JLabel lblTitulo = new JLabel("Eliminar un tipo de cuenta");
+        lblTitulo.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/11.png"));
+        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitulo.setFont(new Font("Noto Sans", Font.BOLD | Font.ITALIC, 24));
+        lblTitulo.setForeground(Color.WHITE); // Texto en blanco
+        lblTitulo.setBounds(49, 30, 398, 60);
+        panelRojo.add(lblTitulo);
+
+        JLabel separadorTitulo = new JLabel();
+        separadorTitulo.setBackground(Color.WHITE);
+        separadorTitulo.setOpaque(true);
+        separadorTitulo.setBounds(131, 88, 294, 2);
+        panelRojo.add(separadorTitulo);
+
+        EntradaTipoCuenta = new JComboBox<String>();
+        EntradaTipoCuenta.setOpaque(true);
+        EntradaTipoCuenta.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        EntradaTipoCuenta.setBounds(82, 169, 393, 27);
+        panelFondo.add(EntradaTipoCuenta);
+
+        JButton BotonVolver = new JButton("VOLVER");
+        BotonVolver.setOpaque(true);
+        BotonVolver.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/8.1.png"));
+        BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+        BotonVolver.setBackground(new Color(192, 57, 43)); // Rojo oscuro
+        BotonVolver.setForeground(Color.WHITE);
+        BotonVolver.setFocusPainted(false);
+        BotonVolver.setBorderPainted(false);
+        BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        BotonVolver.setBounds(350, 337, 157, 39);
+        BotonVolver.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                base.CerrarConexion();
+                MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
+                ventanaMenuTipoCuenta.setLocationRelativeTo(null);
+                ventanaMenuTipoCuenta.setVisible(true);
+                dispose();
+            }
+        });
+        panelFondo.add(BotonVolver);
+
+        JButton BotonEliminar = new JButton("ELIMINAR");
+        BotonEliminar.setOpaque(true);
+        BotonEliminar.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/12.png"));
+        BotonEliminar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+        BotonEliminar.setBackground(new Color(0, 255, 0)); // Rojo oscuro
+        BotonEliminar.setForeground(Color.WHITE);
+        BotonEliminar.setFocusPainted(false);
+        BotonEliminar.setBorderPainted(false);
+        BotonEliminar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        BotonEliminar.setBounds(181, 225, 176, 48);
+        BotonEliminar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AccionEliminarTipoCuenta();
+            }
+        });
+        panelFondo.add(BotonEliminar);
+
+        LLenarListaTipoCuenta();
+        
+        JLabel lblNewLabel_2 = new JLabel("Goliath National Bank");
+        lblNewLabel_2.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 15));
+        lblNewLabel_2.setForeground(new Color(255, 255, 255));
+        lblNewLabel_2.setForeground(Color.WHITE);
+        lblNewLabel_2.setBounds(10, 7, 229, 13);
+        panelRojo.add(lblNewLabel_2);
+        
+        ImageIcon logo = new ImageIcon(getClass().getResource("/ruta/del/logo.png")); // Ajusta la ruta del logo según tu proyecto
+        JLabel lblLogo = new JLabel(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/2.jpg"));
+        lblLogo.setBounds(10, 337, 98, 64); // Posición ajustable según el diseño
+        panelFondo.add(lblLogo);
+        
+        JLabel lblNewLabel = new JLabel("CUENTA");
+        lblNewLabel.setForeground(new Color(255, 255, 255));
+        lblNewLabel.setFont(new Font("Perpetua Titling MT", Font.BOLD | Font.ITALIC, 16));
+        lblNewLabel.setBounds(83, 132, 88, 27);
+        panelFondo.add(lblNewLabel);
 	}
 
 	public void AccionEliminarTipoCuenta(){

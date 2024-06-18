@@ -8,17 +8,17 @@ import Librerias.Libreria;
 import Vista.PantallasAdministracionPrograma.LogIn;
 import Vista.PantallasIngresarACuentaAhorro.SeleccionCuenta;
 
-import javax.swing.JLabel;
+// import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import javax.swing.ImageIcon;
-import java.awt.Canvas;
+// import javax.swing.ImageIcon;
+// import java.awt.Canvas;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
+// import javax.swing.DropMode;
 
 public class PantallaInicio extends JFrame {
 	public Libreria lib = new Libreria();

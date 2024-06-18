@@ -1,18 +1,28 @@
 package Vista.PantallasAdministracionPrograma;
 
-import java.sql.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import java.sql.*;
 
 import Librerias.Libreria;
 import Modelo.BaseDatos;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.*;
+import javax.swing.ImageIcon;
+
 
 public class ReporteCuentasAhorro extends JFrame {
 
@@ -27,44 +37,73 @@ public class ReporteCuentasAhorro extends JFrame {
 	private JButton BotonVolver;
 
 	public ReporteCuentasAhorro() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 850, 581);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        setBounds(100, 100, 850, 581);
+	        setTitle("Reporte de Cuentas de Ahorro");
 
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+	        contentPane = new JPanel();
+	        contentPane.setBackground(new Color(0, 0, 113)); // Fondo rosa bajito
+	        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	        setContentPane(contentPane);
+	        contentPane.setLayout(null);
 
-		addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-				base.CerrarConexion();
-				dispose();
-            }
-        });
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(98, 132, 668, 315);
-		contentPane.add(scrollPane);
-		
-		String[] atributos = {"Numero de cuenta", "Titular", "Tipo de cuenta","Fecha de apertura","Saldo disponible"};
-		datos = LlenarTabla(); 
-		table = new JTable(datos,atributos);
-		scrollPane.setViewportView(table);
-		
-		BotonVolver = new JButton("Volver");
-		BotonVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				base.CerrarConexion();
-				PantallaAdministracionPrograma ventanaPantallaAdministracionPrograma = new PantallaAdministracionPrograma();
-				ventanaPantallaAdministracionPrograma.setLocationRelativeTo(null);
-				ventanaPantallaAdministracionPrograma.setVisible(true);
-				dispose();
-			}
-		});
-		BotonVolver.setBounds(362, 486, 117, 29);
-		contentPane.add(BotonVolver);
+	        addWindowListener(new WindowAdapter() {
+	            @Override
+	            public void windowClosing(WindowEvent e) {
+	                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+	                base.CerrarConexion();
+	                dispose();
+	            }
+	        });
+
+	        JLabel lblTitulo = new JLabel("REPORTE DE CUENTAS DE AHORRO\r\n");
+	        lblTitulo.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/7.jpg"));
+	        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+	        lblTitulo.setFont(new Font("Tw Cen MT Condensed", Font.BOLD | Font.ITALIC, 24));
+	        lblTitulo.setForeground(new Color(255, 255, 255));
+	        lblTitulo.setBounds(114, 12, 596, 50);
+	        contentPane.add(lblTitulo);
+
+	        JLabel separadorTitulo = new JLabel();
+	        separadorTitulo.setBackground(new Color(255, 255, 255));
+	        separadorTitulo.setOpaque(true);
+	        separadorTitulo.setBounds(10, 72, 814, 2);
+	        contentPane.add(separadorTitulo);
+
+	        JScrollPane scrollPane = new JScrollPane();
+	        scrollPane.setForeground(new Color(254, 255, 255));
+	        scrollPane.setBackground(new Color(254, 255, 255)); 
+	        scrollPane.setBounds(10, 85, 814, 400);
+	        contentPane.add(scrollPane);
+
+	        String[] atributos = {"Número de cuenta", "Titular", "Tipo de cuenta", "Fecha de apertura", "Saldo disponible"};
+	        datos = LlenarTabla();
+	        table = new JTable(datos, atributos);
+	        scrollPane.setViewportView(table);
+
+	        JLabel separadorInferior = new JLabel();
+	        separadorInferior.setForeground(new Color(255, 255, 255));
+	        separadorInferior.setBackground(new Color(255, 255, 255));
+	        separadorInferior.setOpaque(true);
+	        separadorInferior.setBounds(10, 495, 814, 2);
+	        contentPane.add(separadorInferior);
+
+	        BotonVolver = new JButton("Volver");
+	        BotonVolver.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                base.CerrarConexion();
+	                PantallaAdministracionPrograma ventanaPantallaAdministracionPrograma = new PantallaAdministracionPrograma();
+	                ventanaPantallaAdministracionPrograma.setLocationRelativeTo(null);
+	                ventanaPantallaAdministracionPrograma.setVisible(true);
+	                dispose();
+	            }
+	        });
+	        BotonVolver.setForeground(Color.WHITE);
+	        BotonVolver.setFont(new Font("Tahoma", Font.BOLD, 14));
+	        BotonVolver.setBackground(new Color(0, 102, 204)); // Azul
+	        BotonVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        BotonVolver.setBounds(363, 510, 117, 30);
+	        contentPane.add(BotonVolver);
 	}
 
 	public Object[][] LlenarTabla(){
