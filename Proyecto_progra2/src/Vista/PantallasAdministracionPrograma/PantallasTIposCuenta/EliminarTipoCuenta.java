@@ -32,7 +32,7 @@ public class EliminarTipoCuenta extends JFrame {
 
 	public EliminarTipoCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 576, 345);
+        setBounds(100, 100, 576, 430);
         setTitle("Eliminar Tipo de Cuenta");
 
         contentPane = new JPanel(); // Inicializar contentPane
@@ -40,14 +40,14 @@ public class EliminarTipoCuenta extends JFrame {
         setContentPane(contentPane);
 
         JPanel panelFondo = new JPanel();
-        panelFondo.setBounds(0, 0, 535, 414);
+        panelFondo.setBounds(0, 0, 576, 415);
         panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
         contentPane.add(panelFondo);
         panelFondo.setLayout(null);
 
         JPanel panelRojo = new JPanel();
         panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
-        panelRojo.setBounds(0, 0, 535, 113);
+        panelRojo.setBounds(0, 0, 576, 113);
         panelFondo.add(panelRojo);
         panelRojo.setLayout(null);
 

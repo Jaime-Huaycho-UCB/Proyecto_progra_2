@@ -18,8 +18,10 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.event.ActionListener;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
 
 public class TablaTiposCuenta extends JFrame {
 
@@ -33,13 +35,36 @@ public class TablaTiposCuenta extends JFrame {
 
 	public TablaTiposCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 592, 524);
+		setBounds(100, 100, 592, 557);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, -11, 592, 540);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
+		panelRojo.setBounds(0, -11, 678, 111);
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(2, 103, 670, 3);
+		panelRojo.add(separadorTitulo);
+		
+		JLabel lblNewLabel_1 = new JLabel("GOLIATH NATIONAL BANK");
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel_1.setForeground(new Color(254, 255, 255));
+		lblNewLabel_1.setBounds(6, 30, 253, 16);
+		panelRojo.add(lblNewLabel_1);
 		addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -59,17 +84,33 @@ public class TablaTiposCuenta extends JFrame {
 		table.setBackground(Color.WHITE);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(108, 96, 380, 280);
-		contentPane.add(scrollPane);
+		scrollPane.setForeground(new Color(254, 255, 255));
+		scrollPane.setBackground(new Color(254, 255, 255));
+		scrollPane.setBounds(34, 101, 516, 363);
+		panelFondo.add(scrollPane);
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNewLabel = new JLabel("Tabla de tipos de cuentas");
+		JLabel lblNewLabel = new JLabel("TABLA DE TIPOS DE CUNETA");
+		lblNewLabel.setIcon(new ImageIcon(TablaTiposCuenta.class.getResource("/Imagenes/icono_tabla.png")));
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
-		lblNewLabel.setBounds(6, 29, 580, 55);
-		contentPane.add(lblNewLabel);
+		lblNewLabel.setBounds(6, 51, 580, 55);
+		panelRojo.add(lblNewLabel);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/8.1.png")));
+		BotonVolver.setOpaque(true);
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.WHITE);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setBounds(532, 472, 117, 37);
+		panelFondo.add(BotonVolver);
+		BotonVolver.setIcon(new ImageIcon(TablaTiposCuenta.class.getResource("/Imagenes/8.1.png")));
+		BotonVolver.setOpaque(true);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuTipoCuenta(),base);
@@ -77,8 +118,8 @@ public class TablaTiposCuenta extends JFrame {
 			}
 		});
 		BotonVolver.setAlignmentX(Component.CENTER_ALIGNMENT);
-		BotonVolver.setBounds(242, 410, 117, 29);
-		contentPane.add(BotonVolver);
+		BotonVolver.setBounds(236, 491, 117, 29);
+		panelFondo.add(BotonVolver);
 		
 	}
 

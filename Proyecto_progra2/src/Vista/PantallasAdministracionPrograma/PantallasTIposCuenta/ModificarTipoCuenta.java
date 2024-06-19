@@ -19,9 +19,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 // import java.sql.SQLException;
 import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class ModificarTipoCuenta extends JFrame {
 
@@ -44,6 +47,32 @@ public class ModificarTipoCuenta extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, -11, 678, 536);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
+		panelRojo.setBounds(0, -11, 678, 111);
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(2, 103, 670, 3);
+		panelRojo.add(separadorTitulo);
+		
+		JLabel lblNewLabel_1 = new JLabel("GOLIATH NATIONAL BANK");
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel_1.setForeground(new Color(254, 255, 255));
+		lblNewLabel_1.setBounds(6, 30, 253, 16);
+		panelRojo.add(lblNewLabel_1);
+		
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -54,75 +83,106 @@ public class ModificarTipoCuenta extends JFrame {
             }
         });
 		
-		JLabel lblNewLabel = new JLabel("Modificar un tipo de cuenta");
+		JLabel lblNewLabel = new JLabel("MODIFICAR UN TIPO DE CUENTA");
+		lblNewLabel.setIcon(new ImageIcon(ModificarTipoCuenta.class.getResource("/Imagenes/Icono_modificacion.jpeg")));
+		lblNewLabel.setForeground(new Color(254, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
-		lblNewLabel.setBounds(6, 28, 666, 57);
-		contentPane.add(lblNewLabel);
+		lblNewLabel.setBounds(2, 48, 666, 57);
+		panelRojo.add(lblNewLabel);
 		
 		EntradaTipoCuenta = new JComboBox<String>();
+		EntradaTipoCuenta.setOpaque(true);
+		EntradaTipoCuenta.setBackground(new Color(254, 255, 255));
 		EntradaTipoCuenta.setBounds(184, 147, 307, 27);
-		contentPane.add(EntradaTipoCuenta);
+		panelFondo.add(EntradaTipoCuenta);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/8.1.png")));
+		BotonVolver.setOpaque(true);
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.WHITE);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setBounds(532, 472, 117, 37);
+		panelFondo.add(BotonVolver);
+		BotonVolver.setIcon(new ImageIcon(ModificarTipoCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuTipoCuenta(),base);
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(149, 423, 117, 29);
-		contentPane.add(BotonVolver);
+		BotonVolver.setBounds(532, 480, 117, 29);
+		panelFondo.add(BotonVolver);
 		
-		JButton BotonModificar = new JButton("Modificar");
+		JButton BotonModificar = new JButton("MODIFICAR");
+		BotonModificar.setOpaque(true);
+		BotonModificar.setIcon(new ImageIcon(AdicionTipoCuenta.class.getResource("/Imagenes/10.png")));
+		BotonModificar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonModificar.setBackground(new Color(34, 139, 34)); // Verde
+		BotonModificar.setForeground(Color.WHITE);
+		BotonModificar.setFocusPainted(false);
+		BotonModificar.setBorderPainted(false);
+		BotonModificar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonModificar.setBounds(243, 438, 179, 29);
 		BotonModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionModificarTipoCuenta();
 				LLenarListaTipoCuenta();
 			}
 		});
-		BotonModificar.setBounds(388, 423, 117, 29);
-		contentPane.add(BotonModificar);
-		
-		JLabel lblNewLabel_1 = new JLabel("Tipo de cuenta");
-		lblNewLabel_1.setBounds(64, 151, 108, 16);
-		contentPane.add(lblNewLabel_1);
+		BotonModificar.setBounds(250, 438, 180, 29);
+		panelFondo.add(BotonModificar);
 		
 		JLabel lblNewLabel_2 = new JLabel("Tipo de interes");
-		lblNewLabel_2.setBounds(106, 280, 108, 16);
-		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(94, 281, 108, 16);
+		panelFondo.add(lblNewLabel_2);
 		LLenarListaTipoCuenta();
 
 		EntradaTipo = new JComboBox<String>();
-		EntradaTipo.setBounds(235, 276, 210, 27);
-		contentPane.add(EntradaTipo);
+		EntradaTipo.setOpaque(true);
+		EntradaTipo.setBounds(197, 302, 294, 27);
+		panelFondo.add(EntradaTipo);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Nombre");
-		lblNewLabel_2_1.setBounds(106, 220, 108, 16);
-		contentPane.add(lblNewLabel_2_1);
+		lblNewLabel_2_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1.setBounds(94, 206, 108, 16);
+		panelFondo.add(lblNewLabel_2_1);
 		
 		EntradaNombre = new JTextField();
-		EntradaNombre.setBounds(235, 215, 210, 26);
-		contentPane.add(EntradaNombre);
+		EntradaNombre.setBounds(197, 234, 299, 35);
+		panelFondo.add(EntradaNombre);
 		EntradaNombre.setColumns(10);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Interes");
-		lblNewLabel_2_1_1.setBounds(106, 341, 108, 16);
-		contentPane.add(lblNewLabel_2_1_1);
+		lblNewLabel_2_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1.setBounds(94, 350, 108, 16);
+		panelFondo.add(lblNewLabel_2_1_1);
 		
 		EntradaInteres = new JTextField();
 		EntradaInteres.setColumns(10);
-		EntradaInteres.setBounds(235, 336, 210, 26);
-		contentPane.add(EntradaInteres);
+		EntradaInteres.setBounds(197, 364, 294, 35);
+		panelFondo.add(EntradaInteres);
 		
 		JButton BotonBuscar = new JButton("Buscar");
+		BotonBuscar.setIcon(new ImageIcon(ModificarTipoCuenta.class.getResource("/Imagenes/icono_buscar.png")));
+		BotonBuscar.setOpaque(true);
 		BotonBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarDatosTipoCuenta();
 			}
 		});
-		BotonBuscar.setBounds(491, 146, 117, 29);
-		contentPane.add(BotonBuscar);
+		BotonBuscar.setBounds(516, 139, 133, 42);
+		panelFondo.add(BotonBuscar);
+		
+		JLabel lblNewLabel_3 = new JLabel("TIPO DE CUENTA");
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setBounds(101, 112, 117, 16);
+		panelFondo.add(lblNewLabel_3);
 	}
 
 	public void MostrarDatosTipoCuenta(){
