@@ -11,6 +11,8 @@ import Vista.PantallaRegistroPersona;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 
@@ -39,6 +41,30 @@ public class CrearCuentaAhorro extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, -11, 631, 411);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBounds(0, -11, 632, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(2, 103, 670, 3);
+		panelRojo.add(separadorTitulo);
+		
+		JLabel lblNewLabel_1 = new JLabel("GOLIATH NATIONAL BANK");
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel_1.setForeground(new Color(254, 255, 255));
+		lblNewLabel_1.setBounds(6, 30, 253, 16);
+		panelRojo.add(lblNewLabel_1);
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -50,46 +76,48 @@ public class CrearCuentaAhorro extends JFrame {
         });
 		
 		JLabel lblNewLabel = new JLabel("Crear un cuenta de ahorro");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(6, 46, 619, 65);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("CI de persona");
-		lblNewLabel_1.setBounds(114, 142, 113, 16);
-		contentPane.add(lblNewLabel_1);
+		panelRojo.add(lblNewLabel);
 		
 		EntradaCi = new JTextField();
 		EntradaCi.setBounds(239, 137, 181, 26);
-		contentPane.add(EntradaCi);
+		panelFondo.add(EntradaCi);
 		EntradaCi.setColumns(10);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Tipo de cuenta");
-		lblNewLabel_1_1.setBounds(114, 213, 113, 16);
-		contentPane.add(lblNewLabel_1_1);
-		
 		JButton BotonCrearCuenta = new JButton("Crear cuenta");
+		BotonCrearCuenta.setBounds(392, 311, 117, 29);
 		BotonCrearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionCrearCuentaAhorro();
 			}
 		});
-		BotonCrearCuenta.setBounds(392, 311, 117, 29);
-		contentPane.add(BotonCrearCuenta);
+		panelFondo.add(BotonCrearCuenta);
 		
 		JButton BotonVolver = new JButton("Volver");
+		BotonVolver.setBounds(134, 311, 117, 29);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(134, 311, 117, 29);
-		contentPane.add(BotonVolver);
+		panelFondo.add(BotonVolver);
 		
 		EntradaTipoCuenta = new JComboBox<String>();
 		EntradaTipoCuenta.setBounds(239, 209, 181, 27);
-		contentPane.add(EntradaTipoCuenta);
+		panelFondo.add(EntradaTipoCuenta);
+		
+		JLabel lblNewLabel_2 = new JLabel("Carnet Identidad");
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(103, 142, 136, 16);
+		panelFondo.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Tipo de cuenta");
+		lblNewLabel_3.setBounds(103, 213, 61, 16);
+		panelFondo.add(lblNewLabel_3);
 		LlenarTiposCuenta();
 	}
 

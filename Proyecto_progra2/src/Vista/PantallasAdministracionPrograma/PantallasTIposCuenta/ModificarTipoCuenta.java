@@ -97,6 +97,7 @@ public class ModificarTipoCuenta extends JFrame {
 		EntradaTipoCuenta.setBounds(184, 147, 307, 27);
 		panelFondo.add(EntradaTipoCuenta);
 		
+		
 		JButton BotonVolver = new JButton("VOLVER");
 		BotonVolver.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.setOpaque(true);
@@ -107,7 +108,6 @@ public class ModificarTipoCuenta extends JFrame {
 		BotonVolver.setBorderPainted(false);
 		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonVolver.setBounds(532, 472, 117, 37);
-		panelFondo.add(BotonVolver);
 		BotonVolver.setIcon(new ImageIcon(ModificarTipoCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

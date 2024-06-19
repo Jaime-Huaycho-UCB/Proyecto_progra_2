@@ -86,7 +86,7 @@ public class TablaTiposCuenta extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setForeground(new Color(254, 255, 255));
 		scrollPane.setBackground(new Color(254, 255, 255));
-		scrollPane.setBounds(34, 101, 516, 363);
+		scrollPane.setBounds(34, 116, 516, 363);
 		panelFondo.add(scrollPane);
 		scrollPane.setViewportView(table);
 		
