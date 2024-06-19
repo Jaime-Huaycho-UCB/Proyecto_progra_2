@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import Modelo.BaseDatos;
+
 public class Libreria {
     // Inicio - Funciones cadena
     public String n(){
@@ -239,6 +241,12 @@ public class Libreria {
         }
     }
     // Fin - Funciones tiempo
+
+    public void CambiarPantalla(JFrame pantalla,BaseDatos conexion){
+        conexion.CerrarConexion();
+        pantalla.setLocationRelativeTo(null);
+        pantalla.setVisible(true);
+    }
 
     public void CambiarPantalla(JFrame pantalla){
         pantalla.setLocationRelativeTo(null);

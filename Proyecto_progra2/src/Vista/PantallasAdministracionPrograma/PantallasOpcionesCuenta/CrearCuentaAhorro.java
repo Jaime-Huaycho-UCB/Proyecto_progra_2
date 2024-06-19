@@ -1,4 +1,4 @@
-package Vista.PantallasCrearCuentaAhorro;
+package Vista.PantallasAdministracionPrograma.PantallasOpcionesCuenta;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 import Librerias.Libreria;
 import Modelo.BaseDatos;
 import Modelo.TipoCuenta;
-import Vista.PantallaInicio;
 import Vista.PantallaRegistroPersona;
 
 import javax.swing.JLabel;
@@ -81,10 +80,7 @@ public class CrearCuentaAhorro extends JFrame {
 		JButton BotonVolver = new JButton("Volver");
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				base.CerrarConexion();
-				PantallaInicio ventanaPantallaInicio = new PantallaInicio();
-				ventanaPantallaInicio.setLocationRelativeTo(null);
-				ventanaPantallaInicio.setVisible(true);
+				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
 				dispose();
 			}
 		});
@@ -131,6 +127,8 @@ public class CrearCuentaAhorro extends JFrame {
 			instruccion.setDouble(5, saldo);
 			int ejecutar = instruccion.executeUpdate();
 			if (ejecutar > 0) {
+				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
+				dispose();
 				lib.MostrarMensaje("Se creo la cuenta de ahorro exitosamente");
 			} else {
 				lib.MostrarMensaje("Fallo al insertar los datos.");

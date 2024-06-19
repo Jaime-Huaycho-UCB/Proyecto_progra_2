@@ -72,10 +72,7 @@ public class TablaTiposCuenta extends JFrame {
 		JButton BotonVolver = new JButton("Volver");
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				base.CerrarConexion();
-				MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
-				ventanaMenuTipoCuenta.setLocationRelativeTo(null);
-				ventanaMenuTipoCuenta.setVisible(true);
+				lib.CambiarPantalla(new MenuTipoCuenta(),base);
 				dispose();
 			}
 		});

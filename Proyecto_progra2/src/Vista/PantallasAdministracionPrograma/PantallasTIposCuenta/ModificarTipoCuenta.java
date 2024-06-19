@@ -13,11 +13,11 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
+// import java.sql.Connection;
+// import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+// import java.sql.SQLException;
 import java.awt.event.*;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -67,10 +67,7 @@ public class ModificarTipoCuenta extends JFrame {
 		JButton BotonVolver = new JButton("Volver");
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CerrarConexion();
-				MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
-				ventanaMenuTipoCuenta.setLocationRelativeTo(null);
-				ventanaMenuTipoCuenta.setVisible(true);
+				lib.CambiarPantalla(new MenuTipoCuenta(),base);
 				dispose();
 			}
 		});
@@ -204,6 +201,8 @@ public class ModificarTipoCuenta extends JFrame {
 			instruccion.setInt(4, id);
 			int ejecutar = instruccion.executeUpdate();
 			if (ejecutar > 0) {
+				lib.CambiarPantalla(new MenuTipoCuenta(),base);
+				dispose();
 				lib.MostrarMensaje("Se modifico el tipo de cuenta exitosamente");
 			} else {
 				lib.MostrarMensaje("Fallo al intentar eliminar el tipo de cuenta.");
@@ -213,43 +212,5 @@ public class ModificarTipoCuenta extends JFrame {
 		}
 		
 	}
-
-	public Connection EstablecerConexion(){
-        Connection conexion = null;
-        String opcion="";
-        String mensaje="Hubo una excepcion: ";
-        String[] botones = {"No","Si"};
-        while (true) {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conexion=DriverManager.getConnection(base.getUrl(), base.getUsuario(), base.getContrasena());
-                return conexion;
-            } catch (ClassNotFoundException a) {
-                opcion=lib.EntradaBotones(mensaje + a.getMessage()+"\n"+"Desea reintentar?", botones);
-            } catch (SQLException b) {
-                opcion=lib.EntradaBotones(mensaje + b.getMessage()+"\n"+"Desea reintentar?", botones);
-            } 
-            if (opcion.equals("No")){
-                return null;
-            }
-        }
-    }
-
-    public void CerrarConexion(){
-        String opcion="";
-        String mensaje="Hubo una excepcion: ";
-        String[] botones = {"No","Si"};
-        while (true) {
-            try {
-                base.getConexion().close();
-                break;
-            } catch (SQLException e) {
-                opcion=lib.EntradaBotones(mensaje + e.getMessage()+"\n"+"Desea reintentar?", botones);
-            }
-            if (opcion.equals("No")){
-                break;
-            }
-        }
-    }
 
 }

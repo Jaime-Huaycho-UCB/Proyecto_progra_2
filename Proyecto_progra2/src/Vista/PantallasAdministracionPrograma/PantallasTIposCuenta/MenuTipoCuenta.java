@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Librerias.Libreria;
 import Vista.PantallasAdministracionPrograma.PantallaAdministracionPrograma;
 
 import javax.swing.JLabel;
@@ -14,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MenuTipoCuenta extends JFrame {
+
+	public Libreria lib = new Libreria();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -45,17 +48,15 @@ public class MenuTipoCuenta extends JFrame {
 		btnNewButton.setBounds(139, 85, 218, 67);
 		contentPane.add(btnNewButton);
 		
-		JButton btnEliminarTipoDe = new JButton("Eliminar tipo de cuenta");
-		btnEliminarTipoDe.addActionListener(new ActionListener() {
+		JButton BotonEliminarTipoCuenta = new JButton("Eliminar tipo de cuenta");
+		BotonEliminarTipoCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EliminarTipoCuenta ventanaEliminarTipoCuenta = new EliminarTipoCuenta();
-				ventanaEliminarTipoCuenta.setLocationRelativeTo(null);
-				ventanaEliminarTipoCuenta.setVisible(true);
+				lib.CambiarPantalla(new EliminarTipoCuenta());
 				dispose();
 			}
 		});
-		btnEliminarTipoDe.setBounds(139, 164, 218, 67);
-		contentPane.add(btnEliminarTipoDe);
+		BotonEliminarTipoCuenta.setBounds(139, 164, 218, 67);
+		contentPane.add(BotonEliminarTipoCuenta);
 		
 		JButton btnModificarTipoDe = new JButton("Modificar tipo de cuenta");
 		btnModificarTipoDe.addActionListener(new ActionListener() {

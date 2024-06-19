@@ -4,6 +4,9 @@ package Vista.PantallasAdministracionPrograma;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Librerias.Libreria;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,10 +18,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import Vista.PantallaInicio;
+import Vista.PantallasAdministracionPrograma.PantallasOpcionesCuenta.MenuOpcionesCuentaAhorro;
 import Vista.PantallasAdministracionPrograma.PantallasTIposCuenta.MenuTipoCuenta;
 
 
 public class PantallaAdministracionPrograma extends JFrame {
+
+    public Libreria lib = new Libreria();
 
 	private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -58,10 +64,10 @@ public class PantallaAdministracionPrograma extends JFrame {
         contentPane.add(separadorTitulo);
 
         // Botón para Tipos de Cuenta
-        JButton btnTiposCuenta = new JButton("Tipos de Cuenta");
-        btnTiposCuenta.setOpaque(true);
-        btnTiposCuenta.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/7.jpg"));
-        btnTiposCuenta.addActionListener(new ActionListener() {
+        JButton BotonTiposCuenta = new JButton("Tipos de Cuenta");
+        BotonTiposCuenta.setOpaque(true);
+        BotonTiposCuenta.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/7.jpg"));
+        BotonTiposCuenta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
                 ventanaMenuTipoCuenta.setLocationRelativeTo(null);
@@ -69,12 +75,12 @@ public class PantallaAdministracionPrograma extends JFrame {
                 dispose();
             }
         });
-        btnTiposCuenta.setForeground(new Color(15, 0, 15));
-        btnTiposCuenta.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 20));
-        btnTiposCuenta.setBackground(new Color(255, 255, 255));
-        btnTiposCuenta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnTiposCuenta.setBounds(58, 119, 280, 80);
-        contentPane.add(btnTiposCuenta);
+        BotonTiposCuenta.setForeground(new Color(15, 0, 15));
+        BotonTiposCuenta.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 20));
+        BotonTiposCuenta.setBackground(new Color(255, 255, 255));
+        BotonTiposCuenta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        BotonTiposCuenta.setBounds(58, 119, 280, 80);
+        contentPane.add(BotonTiposCuenta);
 
         // Línea separadora 1
         JLabel separador1 = new JLabel();
@@ -84,23 +90,21 @@ public class PantallaAdministracionPrograma extends JFrame {
         contentPane.add(separador1);
 
         // Botón para Cuentas de Ahorro
-        JButton btnCuentasAhorro = new JButton("Cuentas de Ahorro");
-        btnCuentasAhorro.setOpaque(true);
-        btnCuentasAhorro.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/5.2.jpg"));
-        btnCuentasAhorro.addActionListener(new ActionListener() {
+        JButton BotonCuentasAhorro = new JButton("Cuentas de Ahorro");
+        BotonCuentasAhorro.setOpaque(true);
+        BotonCuentasAhorro.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/5.2.jpg"));
+        BotonCuentasAhorro.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ReporteCuentasAhorro ventanaReporteCuentasAhorro = new ReporteCuentasAhorro();
-                ventanaReporteCuentasAhorro.setLocationRelativeTo(null);
-                ventanaReporteCuentasAhorro.setVisible(true);
+                lib.CambiarPantalla(new MenuOpcionesCuentaAhorro());
                 dispose();
             }
         });
-        btnCuentasAhorro.setForeground(new Color(23, 0, 23));
-        btnCuentasAhorro.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 20));
-        btnCuentasAhorro.setBackground(new Color(254, 255, 255));
-        btnCuentasAhorro.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnCuentasAhorro.setBounds(418, 119, 306, 80);
-        contentPane.add(btnCuentasAhorro);
+        BotonCuentasAhorro.setForeground(new Color(23, 0, 23));
+        BotonCuentasAhorro.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 20));
+        BotonCuentasAhorro.setBackground(new Color(254, 255, 255));
+        BotonCuentasAhorro.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        BotonCuentasAhorro.setBounds(418, 119, 306, 80);
+        contentPane.add(BotonCuentasAhorro);
 
         // Línea separadora 2
         JLabel separador2 = new JLabel();
@@ -110,23 +114,21 @@ public class PantallaAdministracionPrograma extends JFrame {
         contentPane.add(separador2);
 
         // Botón para Volver (ahora en color rojo)
-        JButton btnVolver = new JButton("Volver");
-        btnVolver.setOpaque(true);
-        btnVolver.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/9.1.png"));
-        btnVolver.addActionListener(new ActionListener() {
+        JButton BotonVolver = new JButton("Volver");
+        BotonVolver.setOpaque(true);
+        BotonVolver.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/9.1.png"));
+        BotonVolver.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                PantallaInicio ventanaPantallaInicio = new PantallaInicio();
-                ventanaPantallaInicio.setLocationRelativeTo(null);
-                ventanaPantallaInicio.setVisible(true);
+                lib.CambiarPantalla(new PantallaInicio());
                 dispose();
             }
         });
-        btnVolver.setForeground(new Color(0, 0, 0));
-        btnVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
-        btnVolver.setBackground(new Color(254, 255, 255)); // Color rojo
-        btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnVolver.setBounds(657, 10, 120, 42);
-        contentPane.add(btnVolver);
+        BotonVolver.setForeground(new Color(0, 0, 0));
+        BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+        BotonVolver.setBackground(new Color(254, 255, 255)); // Color rojo
+        BotonVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        BotonVolver.setBounds(657, 10, 120, 42);
+        contentPane.add(BotonVolver);
         
         // Pie de página
         JLabel lblNewLabel = new JLabel("Goliath National Bank");

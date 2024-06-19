@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import Librerias.Libreria;
 import Modelo.BaseDatos;
-import Vista.PantallasCrearCuentaAhorro.CrearCuentaAhorro;
+import Vista.PantallasAdministracionPrograma.PantallasOpcionesCuenta.CrearCuentaAhorro;
 
 import javax.swing.JLabel;
 import java.awt.Font;

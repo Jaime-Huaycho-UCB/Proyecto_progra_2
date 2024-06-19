@@ -1,9 +1,7 @@
 package Vista.PantallasAdministracionPrograma.PantallasTIposCuenta;
 
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 
 import Librerias.Libreria;
 import Modelo.BaseDatos;
@@ -12,7 +10,7 @@ import Modelo.TipoCuenta;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -32,12 +30,14 @@ public class EliminarTipoCuenta extends JFrame {
 	private JPanel contentPane;
 	public JComboBox<String> EntradaTipoCuenta;
 
-
-
 	public EliminarTipoCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 576, 345);
         setTitle("Eliminar Tipo de Cuenta");
+
+        contentPane = new JPanel(); // Inicializar contentPane
+        contentPane.setLayout(null); // Establecer el layout del contentPane
+        setContentPane(contentPane);
 
         JPanel panelFondo = new JPanel();
         panelFondo.setBounds(0, 0, 535, 414);
@@ -61,7 +61,7 @@ public class EliminarTipoCuenta extends JFrame {
         });
 
         JLabel lblTitulo = new JLabel("Eliminar un tipo de cuenta");
-        lblTitulo.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/11.png"));
+        lblTitulo.setIcon(new ImageIcon(EliminarTipoCuenta.class.getResource("/Imagenes/11.png")));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Noto Sans", Font.BOLD | Font.ITALIC, 24));
         lblTitulo.setForeground(Color.WHITE); // Texto en blanco
@@ -92,10 +92,7 @@ public class EliminarTipoCuenta extends JFrame {
         BotonVolver.setBounds(350, 337, 157, 39);
         BotonVolver.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                base.CerrarConexion();
-                MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
-                ventanaMenuTipoCuenta.setLocationRelativeTo(null);
-                ventanaMenuTipoCuenta.setVisible(true);
+                lib.CambiarPantalla(new MenuTipoCuenta(),base);
                 dispose();
             }
         });
@@ -103,7 +100,7 @@ public class EliminarTipoCuenta extends JFrame {
 
         JButton BotonEliminar = new JButton("ELIMINAR");
         BotonEliminar.setOpaque(true);
-        BotonEliminar.setIcon(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/12.png"));
+        BotonEliminar.setIcon(new ImageIcon(EliminarTipoCuenta.class.getResource("/Imagenes/12.png")));
         BotonEliminar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
         BotonEliminar.setBackground(new Color(0, 255, 0)); // Rojo oscuro
         BotonEliminar.setForeground(Color.WHITE);
@@ -127,7 +124,7 @@ public class EliminarTipoCuenta extends JFrame {
         lblNewLabel_2.setBounds(10, 7, 229, 13);
         panelRojo.add(lblNewLabel_2);
         
-        ImageIcon logo = new ImageIcon(getClass().getResource("/ruta/del/logo.png")); // Ajusta la ruta del logo según tu proyecto
+        // ImageIcon logo = new ImageIcon(getClass().getResource("/ruta/del/logo.png")); // Ajusta la ruta del logo según tu proyecto
         JLabel lblLogo = new JLabel(new ImageIcon("/Users/jaimehuaycho/Desktop/Proyecto_progra_2/Proyecto_progra2/src/recursos/Imagenes/2.jpg"));
         lblLogo.setBounds(10, 337, 98, 64); // Posición ajustable según el diseño
         panelFondo.add(lblLogo);
@@ -200,6 +197,8 @@ public class EliminarTipoCuenta extends JFrame {
 			instruccion.setInt(1, id);
 			int ejecutar = instruccion.executeUpdate();
 			if (ejecutar > 0) {
+                lib.CambiarPantalla(new MenuTipoCuenta(),base);
+                dispose();
 				lib.MostrarMensaje("Se elimino el tipo de cuenta exitosamente");
 			} else {
 				lib.MostrarMensaje("Fallo al intentar eliminar el tipo de cuenta.");
@@ -207,10 +206,7 @@ public class EliminarTipoCuenta extends JFrame {
 		} catch (Exception e) {
 			lib.MostrarMensaje(e.getMessage());
 		}
-		base.CerrarConexion();
-		MenuTipoCuenta ventanaMenuTipoCuenta = new MenuTipoCuenta();
-		ventanaMenuTipoCuenta.setLocationRelativeTo(null);
-		ventanaMenuTipoCuenta.setVisible(true);
+		lib.CambiarPantalla(new MenuTipoCuenta(),base);
 		dispose();
 	}
 }
