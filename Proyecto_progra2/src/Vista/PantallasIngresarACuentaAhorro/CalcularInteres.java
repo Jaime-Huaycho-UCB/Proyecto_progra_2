@@ -7,7 +7,7 @@ import javax.swing.border.EmptyBorder;
 
 import Librerias.Libreria;
 import Modelo.BaseDatos;
-import Vista.PantallasAdministracionPrograma.PantallasTIposCuenta.MenuTipoCuenta;
+
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -146,7 +146,7 @@ public class CalcularInteres extends JFrame {
 		panelFondo.add(BotonCalcular);
 		SalidaSaldoActual.setText(EncontrarSaldo()+"");
 		
-		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver = new JButton("VOLVER");
 		BotonVolver.setOpaque(true);
 		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonVolver.setBackground(new Color(192, 57, 43));
