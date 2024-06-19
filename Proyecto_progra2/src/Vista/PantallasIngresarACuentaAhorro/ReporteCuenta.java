@@ -9,6 +9,9 @@ import Modelo.BaseDatos;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
@@ -17,6 +20,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
 
 public class ReporteCuenta extends JFrame {
 
@@ -56,6 +60,24 @@ public class ReporteCuenta extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, 0, 826, 710);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBounds(0, 0, 826, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(0, 99, 850, 2);
+		panelRojo.add(separadorTitulo);
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -66,85 +88,100 @@ public class ReporteCuenta extends JFrame {
             }
         });
 		
-		JLabel lblNewLabel = new JLabel("Reporte de cuenta");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		JLabel lblNewLabel = new JLabel("REPORTE CUENTA");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 29));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(6, 18, 817, 86);
-		contentPane.add(lblNewLabel);
+		lblNewLabel.setBounds(-13, 25, 817, 86);
+		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Numero de cuenta:");
 		lblNewLabel_1.setBounds(120, 126, 141, 16);
-		contentPane.add(lblNewLabel_1);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1);
 		
 		SalidaNumeroCuenta = new JTextField();
-		SalidaNumeroCuenta.setEditable(false);
 		SalidaNumeroCuenta.setBounds(273, 121, 130, 26);
-		contentPane.add(SalidaNumeroCuenta);
+		SalidaNumeroCuenta.setEditable(false);
+		panelFondo.add(SalidaNumeroCuenta);
 		SalidaNumeroCuenta.setColumns(10);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("CI:");
 		lblNewLabel_1_1.setBounds(436, 126, 141, 16);
-		contentPane.add(lblNewLabel_1_1);
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_1);
 		
 		SalidaCi = new JTextField();
+		SalidaCi.setBounds(589, 121, 130, 26);
 		SalidaCi.setEditable(false);
 		SalidaCi.setColumns(10);
-		SalidaCi.setBounds(589, 121, 130, 26);
-		contentPane.add(SalidaCi);
+		panelFondo.add(SalidaCi);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Tipo de cuenta:");
 		lblNewLabel_1_2.setBounds(120, 185, 141, 16);
-		contentPane.add(lblNewLabel_1_2);
+		lblNewLabel_1_2.setForeground(Color.WHITE);
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_2);
 		
 		SalidaTipoCuenta = new JTextField();
+		SalidaTipoCuenta.setBounds(273, 180, 130, 26);
 		SalidaTipoCuenta.setEditable(false);
 		SalidaTipoCuenta.setColumns(10);
-		SalidaTipoCuenta.setBounds(273, 180, 130, 26);
-		contentPane.add(SalidaTipoCuenta);
+		panelFondo.add(SalidaTipoCuenta);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Tipo de interes:");
 		lblNewLabel_1_1_1.setBounds(436, 185, 141, 16);
-		contentPane.add(lblNewLabel_1_1_1);
+		lblNewLabel_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_1_1);
 		
 		SalidaTipoInteres = new JTextField();
+		SalidaTipoInteres.setBounds(589, 180, 130, 26);
 		SalidaTipoInteres.setEditable(false);
 		SalidaTipoInteres.setColumns(10);
-		SalidaTipoInteres.setBounds(589, 180, 130, 26);
-		contentPane.add(SalidaTipoInteres);
+		panelFondo.add(SalidaTipoInteres);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Fecha de apertura");
 		lblNewLabel_1_3.setBounds(120, 252, 141, 16);
-		contentPane.add(lblNewLabel_1_3);
+		lblNewLabel_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_3);
 		
 		SalidaFechaApertura = new JTextField();
+		SalidaFechaApertura.setBounds(273, 247, 130, 26);
 		SalidaFechaApertura.setEditable(false);
 		SalidaFechaApertura.setColumns(10);
-		SalidaFechaApertura.setBounds(273, 247, 130, 26);
-		contentPane.add(SalidaFechaApertura);
+		panelFondo.add(SalidaFechaApertura);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Interes:");
 		lblNewLabel_1_1_2.setBounds(436, 252, 141, 16);
-		contentPane.add(lblNewLabel_1_1_2);
+		lblNewLabel_1_1_2.setForeground(Color.WHITE);
+		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_1_2);
 		
 		SalidaInteres = new JTextField();
+		SalidaInteres.setBounds(589, 247, 130, 26);
 		SalidaInteres.setEditable(false);
 		SalidaInteres.setColumns(10);
-		SalidaInteres.setBounds(589, 247, 130, 26);
-		contentPane.add(SalidaInteres);
+		panelFondo.add(SalidaInteres);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Saldo");
 		lblNewLabel_1_4.setBounds(120, 320, 141, 16);
-		contentPane.add(lblNewLabel_1_4);
+		lblNewLabel_1_4.setForeground(Color.WHITE);
+		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_4);
 		
 		SalidaSaldo = new JTextField();
+		SalidaSaldo.setBounds(273, 315, 130, 26);
 		SalidaSaldo.setEditable(false);
 		SalidaSaldo.setColumns(10);
-		SalidaSaldo.setBounds(273, 315, 130, 26);
-		contentPane.add(SalidaSaldo);
+		panelFondo.add(SalidaSaldo);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(120, 417, 293, 170);
-		contentPane.add(scrollPane);
+		panelFondo.add(scrollPane);
 		
 		String[] atributoDepositos = {"Fecha transaccion", "Monto", "Descripcion"};
 		depositos = LlenarTabla(1);    
@@ -154,7 +191,7 @@ public class ReporteCuenta extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(426, 417, 293, 170);
-		contentPane.add(scrollPane_1);
+		panelFondo.add(scrollPane_1);
 		
 		String[] atributoRetiros = {"Fecha transaccion", "Monto", "Descripcion"};
 		retiros = LlenarTabla(2);  
@@ -163,16 +200,29 @@ public class ReporteCuenta extends JFrame {
 		scrollPane_1.setViewportView(TablaRetiros);
 		
 		JLabel lblNewLabel_2 = new JLabel("Depositos");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(120, 389, 293, 16);
-		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		panelFondo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Retiros");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2_1.setBounds(426, 389, 293, 16);
-		contentPane.add(lblNewLabel_2_1);
+		lblNewLabel_2_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panelFondo.add(lblNewLabel_2_1);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setBounds(343, 627, 161, 29);
+		BotonVolver.setOpaque(true);
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.BLACK);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setIcon(new ImageIcon(ReporteCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				base.CerrarConexion();
@@ -182,8 +232,18 @@ public class ReporteCuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(360, 617, 117, 29);
-		contentPane.add(BotonVolver);
+		panelFondo.add(BotonVolver);
+		
+		JLabel lblNewLabel_4 = new JLabel("Goliath National Bank");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 15));
+		lblNewLabel_4.setBounds(10, 20, 163, 13);
+		panelRojo.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setBounds(669, 25, 101, 42);
+		panelRojo.add(lblNewLabel_3);
+		lblNewLabel_3.setIcon(new ImageIcon(ReporteCuenta.class.getResource("/Imagenes/2.jpg")));
 		LlenarDatos();
 	}
 

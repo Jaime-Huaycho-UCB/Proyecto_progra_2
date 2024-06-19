@@ -116,7 +116,6 @@ public class MenuTipoCuenta extends JFrame {
 		BotonVolver.setFocusPainted(false);
 		BotonVolver.setBorderPainted(false);
 		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		BotonVolver.setBounds(398, 318, 117, 29);
 		panelFondo.add(BotonVolver);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

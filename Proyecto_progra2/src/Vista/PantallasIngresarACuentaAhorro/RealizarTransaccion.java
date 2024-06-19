@@ -11,7 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 
-
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
@@ -21,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
 
 public class RealizarTransaccion extends JFrame {
 
@@ -44,12 +46,31 @@ public class RealizarTransaccion extends JFrame {
 	public RealizarTransaccion(int numeroCuenta) {
 		this.numeroCuenta=numeroCuenta;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 538, 596);
+		setBounds(100, 100, 538, 540);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, 0, 524, 514);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBounds(0, -11, 524, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(0, 99, 650, 2);
+		panelRojo.add(separadorTitulo);
+
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -60,51 +81,76 @@ public class RealizarTransaccion extends JFrame {
             }
         });
 		
-		JLabel lblNewLabel = new JLabel("Realizar una transaccion");
+		JLabel lblNewLabel = new JLabel("REALIZAR UNA TRANSACCION ");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 26));
-		lblNewLabel.setBounds(6, 51, 526, 79);
-		contentPane.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 26));
+		lblNewLabel.setBounds(10, 32, 526, 79);
+		panelRojo.add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(96, 287, 349, 167);
-		contentPane.add(scrollPane);
+		scrollPane.setBounds(101, 239, 349, 167);
+		panelFondo.add(scrollPane);
 		
 		EntradaDescripcion = new JTextArea();
 		scrollPane.setViewportView(EntradaDescripcion);
 		
 		JLabel lblNewLabel_1 = new JLabel("Tipo de transaccion");
-		lblNewLabel_1.setBounds(96, 142, 132, 16);
-		contentPane.add(lblNewLabel_1);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBounds(49, 133, 132, 16);
+		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 13));
+		panelFondo.add(lblNewLabel_1);
 		
 		String[] listaTiposTransaccion = {"Deposito","Retiro"};
 		EntradaTipoTransaccion = new JComboBox<String>(listaTiposTransaccion);
-		EntradaTipoTransaccion.setBounds(240, 138, 205, 27);
-		contentPane.add(EntradaTipoTransaccion);
+		EntradaTipoTransaccion.setBounds(191, 129, 205, 27);
+		panelFondo.add(EntradaTipoTransaccion);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Monto");
-		lblNewLabel_1_1.setBounds(96, 202, 132, 16);
-		contentPane.add(lblNewLabel_1_1);
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setBounds(37, 180, 132, 16);
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		panelFondo.add(lblNewLabel_1_1);
 		
 		EntradaMonto = new JTextField();
-		EntradaMonto.setBounds(240, 197, 205, 26);
-		contentPane.add(EntradaMonto);
+		EntradaMonto.setBounds(191, 177, 205, 26);
+		panelFondo.add(EntradaMonto);
 		EntradaMonto.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Descripcion");
-		lblNewLabel_2.setBounds(96, 259, 349, 16);
-		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(37, 213, 349, 16);
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
+		panelFondo.add(lblNewLabel_2);
 		
 		JButton BotonRealizarTransaccion = new JButton("Realizar");
+		BotonRealizarTransaccion.setOpaque(true);
+		BotonRealizarTransaccion.setBackground(Color.GREEN);
+		BotonRealizarTransaccion.setForeground(Color.BLACK);
+		BotonRealizarTransaccion.setFocusPainted(false);
+		BotonRealizarTransaccion.setBorderPainted(false);
+		BotonRealizarTransaccion.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonRealizarTransaccion.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_realizar.png")));
+		BotonRealizarTransaccion.setFont(new Font("Dialog", Font.BOLD, 13));
+		BotonRealizarTransaccion.setBounds(200, 416, 154, 29);
 		BotonRealizarTransaccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionRealizarTransaccion();
 			}
 		});
-		BotonRealizarTransaccion.setBounds(328, 489, 117, 29);
-		contentPane.add(BotonRealizarTransaccion);
+		panelFondo.add(BotonRealizarTransaccion);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setOpaque(true);
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.BLACK);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setBounds(382, 458, 132, 32);
+		BotonVolver.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				base.CerrarConexion();
@@ -114,8 +160,28 @@ public class RealizarTransaccion extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(96, 489, 117, 29);
-		contentPane.add(BotonVolver);
+		panelFondo.add(BotonVolver);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setBounds(10, 449, 103, 50);
+		lblNewLabel_3.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/2.jpg")));
+		panelFondo.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Goliath National Bank");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 13));
+		lblNewLabel_4.setBounds(20, 20, 174, 13);
+		panelRojo.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setBounds(418, 126, 45, 32);
+		lblNewLabel_5.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_transferencia2.0.jpg")));
+		panelFondo.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("New label");
+		lblNewLabel_6.setBounds(431, 175, 32, 29);
+		lblNewLabel_6.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_saldo.png")));
+		panelFondo.add(lblNewLabel_6);
 	}
 
 	public void AccionRealizarTransaccion(){

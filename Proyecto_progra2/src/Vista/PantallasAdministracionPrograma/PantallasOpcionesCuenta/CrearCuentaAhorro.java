@@ -8,7 +8,7 @@ import Librerias.Libreria;
 import Modelo.BaseDatos;
 import Modelo.TipoCuenta;
 import Vista.PantallaRegistroPersona;
-import Vista.PantallasAdministracionPrograma.PantallasTIposCuenta.AdicionTipoCuenta;
+
 import Vista.PantallasAdministracionPrograma.PantallasTIposCuenta.MenuTipoCuenta;
 
 import javax.swing.JLabel;
@@ -93,6 +93,7 @@ public class CrearCuentaAhorro extends JFrame {
 		EntradaCi.setColumns(10);
 		
 		JButton BotonCrearCuenta = new JButton("ADICIONAR");
+		BotonCrearCuenta.setBounds(232, 261, 181, 42);
 		BotonCrearCuenta.setOpaque(true);
 		BotonCrearCuenta.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/10.png")));
 		BotonCrearCuenta.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
@@ -101,10 +102,8 @@ public class CrearCuentaAhorro extends JFrame {
 		BotonCrearCuenta.setFocusPainted(false);
 		BotonCrearCuenta.setBorderPainted(false);
 		BotonCrearCuenta.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		BotonCrearCuenta.setBounds(232, 261, 128, 42);
 
 		BotonCrearCuenta.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/10.png")));
-		BotonCrearCuenta.setBounds(232, 261, 128, 42);
 		BotonCrearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionCrearCuentaAhorro();
@@ -113,6 +112,7 @@ public class CrearCuentaAhorro extends JFrame {
 		panelFondo.add(BotonCrearCuenta);
 		
 		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setBounds(480, 352, 128, 42);
 		BotonVolver.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.setOpaque(true);
 		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
@@ -122,7 +122,6 @@ public class CrearCuentaAhorro extends JFrame {
 		BotonVolver.setBorderPainted(false);
 		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonVolver.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/8.1.png")));
-		BotonVolver.setBounds(480, 352, 128, 42);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
@@ -136,18 +135,18 @@ public class CrearCuentaAhorro extends JFrame {
 		panelFondo.add(EntradaTipoCuenta);
 		
 		JLabel lblNewLabel_2 = new JLabel("Carnet Identidad");
-		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(113, 142, 136, 16);
+		lblNewLabel_2.setForeground(Color.WHITE);
 		panelFondo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Tipo de cuenta");
-		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setBounds(113, 213, 106, 16);
+		lblNewLabel_3.setForeground(Color.WHITE);
 		panelFondo.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/2.jpg")));
 		lblNewLabel_4.setBounds(16, 351, 100, 42);
+		lblNewLabel_4.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/2.jpg")));
 		panelFondo.add(lblNewLabel_4);
 		LlenarTiposCuenta();
 	}

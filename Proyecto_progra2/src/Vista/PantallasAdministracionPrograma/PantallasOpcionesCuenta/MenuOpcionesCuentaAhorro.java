@@ -54,7 +54,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		
 		
 		JButton BotonReporteCuentasAhorro = new JButton("Reporte Cuentas de Ahorro");
-		BotonReporteCuentasAhorro.setBounds(151, 142, 280, 52);
+		BotonReporteCuentasAhorro.setBounds(132, 143, 318, 52);
 		BotonReporteCuentasAhorro.setOpaque(true);
 		BotonReporteCuentasAhorro .setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonReporteCuentasAhorro .setBackground(new Color(23, 143, 179));
@@ -72,7 +72,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		panelFondo.add(BotonReporteCuentasAhorro);
 		
 		JButton BotonCrearCuentaAhorro = new JButton("Crear Cuenta de Ahorro");
-		BotonCrearCuentaAhorro.setBounds(151, 219, 280, 52);
+		BotonCrearCuentaAhorro.setBounds(132, 216, 318, 52);
 		BotonCrearCuentaAhorro.setOpaque(true);
 		BotonCrearCuentaAhorro .setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonCrearCuentaAhorro .setBackground(Color.GREEN);
@@ -90,7 +90,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		panelFondo.add(BotonCrearCuentaAhorro);
 		
 		JButton BotonEliminarCuentasAhorro = new JButton("Eliminar Cuentas de Ahorro");
-		BotonEliminarCuentasAhorro.setBounds(151, 300, 280, 58);
+		BotonEliminarCuentasAhorro.setBounds(132, 299, 318, 58);
 		BotonEliminarCuentasAhorro.setOpaque(true);
 		BotonEliminarCuentasAhorro.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonEliminarCuentasAhorro.setBackground(Color.RED);
@@ -106,7 +106,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		panelFondo.add(BotonEliminarCuentasAhorro);
 		
 		JButton BotonVolver = new JButton("VOLVER");
-		BotonVolver.setBounds(452, 408, 117, 38);
+		BotonVolver.setBounds(418, 407, 144, 38);
 		BotonVolver.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.setOpaque(true);
 		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
