@@ -73,13 +73,14 @@ public class ReporteCuentasAhorro extends JFrame {
 		scrollPane.setFont(new Font("Courier New", Font.ITALIC, 14));
 		scrollPane.setForeground(new Color(254, 255, 255));
 		scrollPane.setBackground(new Color(254, 255, 255));
-		scrollPane.setBounds(10, 85, 814, 400);
+		scrollPane.setBounds(32, 85, 792, 400);
 		contentPane.add(scrollPane);
 
 		String[] atributos = { "Número de cuenta", "Titular", "Tipo de cuenta", "Fecha de apertura",
 				"Saldo disponible" };
 		datos = LlenarTabla();
 		table = new JTable(datos, atributos);
+		table.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane.setViewportView(table);
 
 		JLabel separadorInferior = new JLabel();
@@ -90,6 +91,7 @@ public class ReporteCuentasAhorro extends JFrame {
 		contentPane.add(separadorInferior);
 
 		BotonVolver = new JButton("Volver");
+		BotonVolver.setOpaque(true);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
@@ -98,7 +100,7 @@ public class ReporteCuentasAhorro extends JFrame {
 		});
 		BotonVolver.setForeground(Color.WHITE);
 		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
-		BotonVolver.setBackground(new Color(0, 102, 204)); // Azul
+		BotonVolver.setBackground(new Color(108, 17, 13)); // Azul
 		BotonVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		BotonVolver.setBounds(363, 510, 117, 30);
 		contentPane.add(BotonVolver);

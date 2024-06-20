@@ -196,6 +196,7 @@ public class ReporteCuenta extends JFrame {
 		depositos = LlenarTabla(1);    
 
 		TablaDepositos = new JTable(depositos,atributoDepositos);
+		TablaDepositos.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane.setViewportView(TablaDepositos);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -207,6 +208,7 @@ public class ReporteCuenta extends JFrame {
 		retiros = LlenarTabla(2);  
 
 		TablaRetiros = new JTable(retiros,atributoRetiros);
+		TablaRetiros.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane_1.setViewportView(TablaRetiros);
 		
 		JLabel lblNewLabel_2 = new JLabel("Depositos:");

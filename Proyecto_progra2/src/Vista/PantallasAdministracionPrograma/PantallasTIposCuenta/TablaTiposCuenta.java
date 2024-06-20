@@ -80,6 +80,7 @@ public class TablaTiposCuenta extends JFrame {
         DefaultTableModel model = new DefaultTableModel(data, atributos);
 		
 		table = new JTable(model);
+		table.setFont(new Font("Courier New", Font.ITALIC, 14));
 		table.setSelectionBackground(Color.WHITE);
 		table.setBackground(Color.WHITE);
 
