@@ -54,13 +54,13 @@ public class RealizarTransaccion extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 524, 514);
+		panelFondo.setBounds(0, 0, 559, 512);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
 
 		JPanel panelRojo = new JPanel();
-		panelRojo.setBounds(0, -11, 524, 111);
+		panelRojo.setBounds(0, -11, 553, 111);
 		panelRojo.setBackground(new Color(183, 0, 0));
 		panelFondo.add(panelRojo);
 		panelRojo.setLayout(null);
@@ -85,7 +85,7 @@ public class RealizarTransaccion extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_tranferencia.jpg")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 26));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 26));
 		lblNewLabel.setBounds(10, 32, 526, 79);
 		panelRojo.add(lblNewLabel);
 		
@@ -94,46 +94,49 @@ public class RealizarTransaccion extends JFrame {
 		panelFondo.add(scrollPane);
 		
 		EntradaDescripcion = new JTextArea();
+		EntradaDescripcion.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane.setViewportView(EntradaDescripcion);
 		
-		JLabel lblNewLabel_1 = new JLabel("Tipo de transaccion");
+		JLabel lblNewLabel_1 = new JLabel("Tipo de transaccion:");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setBounds(49, 133, 132, 16);
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 13));
+		lblNewLabel_1.setBounds(49, 133, 171, 16);
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1);
 		
 		String[] listaTiposTransaccion = {"Deposito","Retiro"};
 		EntradaTipoTransaccion = new JComboBox<String>(listaTiposTransaccion);
-		EntradaTipoTransaccion.setBounds(191, 129, 205, 27);
+		EntradaTipoTransaccion.setFont(new Font("Courier New", Font.PLAIN, 13));
+		EntradaTipoTransaccion.setBounds(219, 129, 205, 27);
 		panelFondo.add(EntradaTipoTransaccion);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Monto");
+		JLabel lblNewLabel_1_1 = new JLabel("Monto:");
 		lblNewLabel_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_1.setBounds(37, 180, 132, 16);
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		panelFondo.add(lblNewLabel_1_1);
 		
 		EntradaMonto = new JTextField();
+		EntradaMonto.setFont(new Font("Courier New", Font.ITALIC, 13));
 		EntradaMonto.setBounds(191, 177, 205, 26);
 		panelFondo.add(EntradaMonto);
 		EntradaMonto.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Descripcion");
+		JLabel lblNewLabel_2 = new JLabel("Descripcion:");
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(37, 213, 349, 16);
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		panelFondo.add(lblNewLabel_2);
 		
-		JButton BotonRealizarTransaccion = new JButton("Realizar");
+		JButton BotonRealizarTransaccion = new JButton("ACEPTAR");
 		BotonRealizarTransaccion.setOpaque(true);
-		BotonRealizarTransaccion.setBackground(Color.GREEN);
+		BotonRealizarTransaccion.setBackground(new Color(51, 152, 46));
 		BotonRealizarTransaccion.setForeground(Color.BLACK);
 		BotonRealizarTransaccion.setFocusPainted(false);
 		BotonRealizarTransaccion.setBorderPainted(false);
 		BotonRealizarTransaccion.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonRealizarTransaccion.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_realizar.png")));
-		BotonRealizarTransaccion.setFont(new Font("Dialog", Font.BOLD, 13));
+		BotonRealizarTransaccion.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		BotonRealizarTransaccion.setBounds(200, 416, 154, 29);
 		BotonRealizarTransaccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -170,12 +173,12 @@ public class RealizarTransaccion extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("Goliath National Bank");
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 13));
+		lblNewLabel_4.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setBounds(20, 20, 174, 13);
 		panelRojo.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(418, 126, 45, 32);
+		lblNewLabel_5.setBounds(436, 124, 45, 32);
 		lblNewLabel_5.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_transferencia2.0.jpg")));
 		panelFondo.add(lblNewLabel_5);
 		

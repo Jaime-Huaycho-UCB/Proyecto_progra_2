@@ -91,96 +91,104 @@ public class ReporteCuenta extends JFrame {
 		JLabel lblNewLabel = new JLabel("REPORTE CUENTA");
 		lblNewLabel.setIcon(new ImageIcon(ReporteCuenta.class.getResource("/Imagenes/icono_reporte.png")));
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 29));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 29));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(-13, 25, 817, 86);
+		lblNewLabel.setBounds(10, 25, 817, 86);
 		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Numero de cuenta:");
-		lblNewLabel_1.setBounds(120, 126, 141, 16);
+		lblNewLabel_1.setBounds(120, 148, 141, 16);
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1);
 		
 		SalidaNumeroCuenta = new JTextField();
-		SalidaNumeroCuenta.setBounds(273, 121, 130, 26);
+		SalidaNumeroCuenta.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaNumeroCuenta.setBounds(273, 143, 130, 26);
 		SalidaNumeroCuenta.setEditable(false);
 		panelFondo.add(SalidaNumeroCuenta);
 		SalidaNumeroCuenta.setColumns(10);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("CI:");
-		lblNewLabel_1_1.setBounds(436, 126, 141, 16);
+		lblNewLabel_1_1.setBounds(436, 148, 141, 16);
 		lblNewLabel_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1_1);
 		
 		SalidaCi = new JTextField();
-		SalidaCi.setBounds(589, 121, 130, 26);
+		SalidaCi.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaCi.setBounds(589, 143, 130, 26);
 		SalidaCi.setEditable(false);
 		SalidaCi.setColumns(10);
 		panelFondo.add(SalidaCi);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Tipo de cuenta:");
-		lblNewLabel_1_2.setBounds(120, 185, 141, 16);
+		lblNewLabel_1_2.setBounds(120, 207, 141, 16);
 		lblNewLabel_1_2.setForeground(Color.WHITE);
-		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1_2);
 		
 		SalidaTipoCuenta = new JTextField();
-		SalidaTipoCuenta.setBounds(273, 180, 130, 26);
+		SalidaTipoCuenta.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaTipoCuenta.setBounds(273, 202, 130, 26);
 		SalidaTipoCuenta.setEditable(false);
 		SalidaTipoCuenta.setColumns(10);
 		panelFondo.add(SalidaTipoCuenta);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Tipo de interes:");
-		lblNewLabel_1_1_1.setBounds(436, 185, 141, 16);
+		lblNewLabel_1_1_1.setBounds(436, 207, 141, 16);
 		lblNewLabel_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1_1_1);
 		
 		SalidaTipoInteres = new JTextField();
-		SalidaTipoInteres.setBounds(589, 180, 130, 26);
+		SalidaTipoInteres.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaTipoInteres.setBounds(589, 202, 130, 26);
 		SalidaTipoInteres.setEditable(false);
 		SalidaTipoInteres.setColumns(10);
 		panelFondo.add(SalidaTipoInteres);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Fecha de apertura");
-		lblNewLabel_1_3.setBounds(120, 252, 141, 16);
+		JLabel lblNewLabel_1_3 = new JLabel("Fecha de apertura:");
+		lblNewLabel_1_3.setBounds(120, 274, 141, 16);
 		lblNewLabel_1_3.setForeground(Color.WHITE);
-		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1_3);
 		
 		SalidaFechaApertura = new JTextField();
-		SalidaFechaApertura.setBounds(273, 247, 130, 26);
+		SalidaFechaApertura.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaFechaApertura.setBounds(273, 269, 130, 26);
 		SalidaFechaApertura.setEditable(false);
 		SalidaFechaApertura.setColumns(10);
 		panelFondo.add(SalidaFechaApertura);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Interes:");
-		lblNewLabel_1_1_2.setBounds(436, 252, 141, 16);
+		lblNewLabel_1_1_2.setBounds(436, 274, 141, 16);
 		lblNewLabel_1_1_2.setForeground(Color.WHITE);
-		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_1_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		panelFondo.add(lblNewLabel_1_1_2);
 		
 		SalidaInteres = new JTextField();
-		SalidaInteres.setBounds(589, 247, 130, 26);
+		SalidaInteres.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaInteres.setBounds(589, 269, 130, 26);
 		SalidaInteres.setEditable(false);
 		SalidaInteres.setColumns(10);
 		panelFondo.add(SalidaInteres);
 		
-		JLabel lblNewLabel_1_4 = new JLabel("Saldo");
-		lblNewLabel_1_4.setBounds(120, 320, 141, 16);
+		JLabel lblNewLabel_1_4 = new JLabel("Saldo:");
+		lblNewLabel_1_4.setBounds(120, 342, 141, 16);
 		lblNewLabel_1_4.setForeground(Color.WHITE);
-		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_4.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 12));
 		panelFondo.add(lblNewLabel_1_4);
 		
 		SalidaSaldo = new JTextField();
-		SalidaSaldo.setBounds(273, 315, 130, 26);
+		SalidaSaldo.setFont(new Font("Courier New", Font.ITALIC, 13));
+		SalidaSaldo.setBounds(273, 337, 130, 26);
 		SalidaSaldo.setEditable(false);
 		SalidaSaldo.setColumns(10);
 		panelFondo.add(SalidaSaldo);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane.setBounds(120, 417, 293, 170);
 		panelFondo.add(scrollPane);
 		
@@ -191,6 +199,7 @@ public class ReporteCuenta extends JFrame {
 		scrollPane.setViewportView(TablaDepositos);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane_1.setBounds(426, 417, 293, 170);
 		panelFondo.add(scrollPane_1);
 		
@@ -200,17 +209,17 @@ public class ReporteCuenta extends JFrame {
 		TablaRetiros = new JTable(retiros,atributoRetiros);
 		scrollPane_1.setViewportView(TablaRetiros);
 		
-		JLabel lblNewLabel_2 = new JLabel("Depositos");
+		JLabel lblNewLabel_2 = new JLabel("Depositos:");
 		lblNewLabel_2.setBounds(120, 389, 293, 16);
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panelFondo.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Retiros");
+		JLabel lblNewLabel_2_1 = new JLabel("Retiros:");
 		lblNewLabel_2_1.setBounds(426, 389, 293, 16);
 		lblNewLabel_2_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panelFondo.add(lblNewLabel_2_1);
 		
@@ -234,8 +243,8 @@ public class ReporteCuenta extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("Goliath National Bank");
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel_4.setBounds(10, 20, 163, 13);
+		lblNewLabel_4.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_4.setBounds(10, 20, 260, 13);
 		panelRojo.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");

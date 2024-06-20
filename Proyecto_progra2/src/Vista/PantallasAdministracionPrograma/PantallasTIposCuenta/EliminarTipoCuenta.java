@@ -60,24 +60,23 @@ public class EliminarTipoCuenta extends JFrame {
             }
         });
 
-        JLabel lblTitulo = new JLabel("Eliminar un tipo de cuenta");
+        JLabel lblTitulo = new JLabel("ELIMINAR UN TIPO DE CUENTA");
         lblTitulo.setIcon(new ImageIcon(EliminarTipoCuenta.class.getResource("/Imagenes/11.png")));
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitulo.setFont(new Font("Noto Sans", Font.BOLD | Font.ITALIC, 24));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 24));
         lblTitulo.setForeground(Color.WHITE); // Texto en blanco
-        lblTitulo.setBounds(49, 30, 398, 60);
+        lblTitulo.setBounds(61, 28, 428, 60);
         panelRojo.add(lblTitulo);
 
         JLabel separadorTitulo = new JLabel();
         separadorTitulo.setBackground(Color.WHITE);
         separadorTitulo.setOpaque(true);
-        separadorTitulo.setBounds(131, 88, 294, 2);
+        separadorTitulo.setBounds(158, 86, 294, 2);
         panelRojo.add(separadorTitulo);
 
         EntradaTipoCuenta = new JComboBox<String>();
-        EntradaTipoCuenta.setOpaque(true);
-        EntradaTipoCuenta.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        EntradaTipoCuenta.setBounds(82, 169, 393, 27);
+        EntradaTipoCuenta.setFont(new Font("Courier New", Font.ITALIC, 14));
+        EntradaTipoCuenta.setBounds(93, 171, 393, 27);
         panelFondo.add(EntradaTipoCuenta);
 
         JButton BotonVolver = new JButton("VOLVER");
@@ -89,7 +88,7 @@ public class EliminarTipoCuenta extends JFrame {
         BotonVolver.setFocusPainted(false);
         BotonVolver.setBorderPainted(false);
         BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        BotonVolver.setBounds(350, 337, 157, 39);
+        BotonVolver.setBounds(381, 337, 157, 39);
         BotonVolver.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 lib.CambiarPantalla(new MenuTipoCuenta(),base);
@@ -102,12 +101,12 @@ public class EliminarTipoCuenta extends JFrame {
         BotonEliminar.setOpaque(true);
         BotonEliminar.setIcon(new ImageIcon(EliminarTipoCuenta.class.getResource("/Imagenes/12.png")));
         BotonEliminar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
-        BotonEliminar.setBackground(new Color(0, 255, 0)); // Rojo oscuro
+        BotonEliminar.setBackground(new Color(51, 152, 46)); // Rojo oscuro
         BotonEliminar.setForeground(Color.WHITE);
         BotonEliminar.setFocusPainted(false);
         BotonEliminar.setBorderPainted(false);
         BotonEliminar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        BotonEliminar.setBounds(181, 225, 176, 48);
+        BotonEliminar.setBounds(202, 225, 176, 48);
         BotonEliminar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AccionEliminarTipoCuenta();
@@ -118,7 +117,7 @@ public class EliminarTipoCuenta extends JFrame {
         LLenarListaTipoCuenta();
         
         JLabel lblNewLabel_2 = new JLabel("Goliath National Bank");
-        lblNewLabel_2.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 15));
+        lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
         lblNewLabel_2.setForeground(new Color(255, 255, 255));
         lblNewLabel_2.setForeground(Color.WHITE);
         lblNewLabel_2.setBounds(10, 7, 229, 13);
@@ -129,9 +128,9 @@ public class EliminarTipoCuenta extends JFrame {
         lblLogo.setBounds(10, 337, 98, 64); // Posición ajustable según el diseño
         panelFondo.add(lblLogo);
         
-        JLabel lblNewLabel = new JLabel("CUENTA");
+        JLabel lblNewLabel = new JLabel("CUENTA:");
         lblNewLabel.setForeground(new Color(255, 255, 255));
-        lblNewLabel.setFont(new Font("Perpetua Titling MT", Font.BOLD | Font.ITALIC, 16));
+        lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 17));
         lblNewLabel.setBounds(83, 132, 88, 27);
         panelFondo.add(lblNewLabel);
 	}

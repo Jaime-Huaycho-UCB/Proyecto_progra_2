@@ -58,7 +58,7 @@ public class ReporteCuentasAhorro extends JFrame {
 		JLabel lblTitulo = new JLabel("REPORTE DE CUENTAS DE AHORRO\r\n");
 		lblTitulo.setIcon(new ImageIcon(ReporteCuentasAhorro.class.getResource("/Imagenes/7.jpg")));
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Tw Cen MT Condensed", Font.BOLD | Font.ITALIC, 24));
+		lblTitulo.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 26));
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setBounds(114, 12, 596, 50);
 		contentPane.add(lblTitulo);
@@ -70,6 +70,7 @@ public class ReporteCuentasAhorro extends JFrame {
 		contentPane.add(separadorTitulo);
 
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setFont(new Font("Courier New", Font.ITALIC, 14));
 		scrollPane.setForeground(new Color(254, 255, 255));
 		scrollPane.setBackground(new Color(254, 255, 255));
 		scrollPane.setBounds(10, 85, 814, 400);
@@ -96,7 +97,7 @@ public class ReporteCuentasAhorro extends JFrame {
 			}
 		});
 		BotonVolver.setForeground(Color.WHITE);
-		BotonVolver.setFont(new Font("Tahoma", Font.BOLD, 14));
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonVolver.setBackground(new Color(0, 102, 204)); // Azul
 		BotonVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		BotonVolver.setBounds(363, 510, 117, 30);

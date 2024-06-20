@@ -55,7 +55,7 @@ public class CalcularInteres extends JFrame {
 	public CalcularInteres(int numeroCuenta) {
 		this.numeroCuenta=numeroCuenta;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 673, 428);
+		setBounds(100, 100, 690, 461);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -63,21 +63,21 @@ public class CalcularInteres extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 689, 429);
+		panelFondo.setBounds(0, 0, 689, 461);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
 
 		JPanel panelRojo = new JPanel();
 		panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
-		panelRojo.setBounds(0, -11, 689, 111);
+		panelRojo.setBounds(0, -11, 689, 123);
 		panelFondo.add(panelRojo);
 		panelRojo.setLayout(null);
 		
 		JLabel separadorTitulo = new JLabel();
 		separadorTitulo.setBackground(Color.WHITE);
 		separadorTitulo.setOpaque(true);
-		separadorTitulo.setBounds(10, 99, 650, 2);
+		separadorTitulo.setBounds(19, 105, 650, 2);
 		panelRojo.add(separadorTitulo);
 
 		addWindowListener(new WindowAdapter() {
@@ -92,29 +92,32 @@ public class CalcularInteres extends JFrame {
 		JLabel lblNewLabel = new JLabel("CALCULA TU INTERES");
 		lblNewLabel.setIcon(new ImageIcon(CalcularInteres.class.getResource("/Imagenes/icono_interes.png")));
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-		lblNewLabel.setBounds(162, 30, 339, 65);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel.setBounds(172, 42, 339, 65);
 		panelRojo.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Saldo actual:");
+		JLabel lblNewLabel_1 = new JLabel("SALDO ACTUAL:");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNewLabel_1.setBounds(144, 114, 97, 16);
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_1.setBounds(70, 149, 119, 16);
 		panelFondo.add(lblNewLabel_1);
 		
 		SalidaSaldoActual = new JTextField();
+		SalidaSaldoActual.setFont(new Font("Courier New", Font.ITALIC, 13));
 		SalidaSaldoActual.setBackground(Color.WHITE);
 		SalidaSaldoActual.setEditable(false);
-		SalidaSaldoActual.setBounds(277, 112, 202, 26);
+		SalidaSaldoActual.setBounds(229, 145, 250, 26);
 		panelFondo.add(SalidaSaldoActual);
 		SalidaSaldoActual.setColumns(10);
 		
 		EntradaMes = new JComboBox<String>();
-		EntradaMes.setBounds(277, 164, 202, 27);
+		EntradaMes.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaMes.setBounds(229, 193, 250, 27);
 		panelFondo.add(EntradaMes);
 		
 		EntradaAno = new JComboBox<String>();
-		EntradaAno.setBounds(277, 217, 202, 27);
+		EntradaAno.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaAno.setBounds(229, 243, 250, 27);
 		EntradaAno.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ActualizarEntradaFecha();
@@ -123,16 +126,17 @@ public class CalcularInteres extends JFrame {
 		panelFondo.add(EntradaAno);
 		
 		SalidaInteres = new JTextField();
+		SalidaInteres.setFont(new Font("Courier New", Font.ITALIC, 13));
 		SalidaInteres.setBackground(Color.WHITE);
 		SalidaInteres.setEditable(false);
-		SalidaInteres.setBounds(172, 277, 291, 26);
+		SalidaInteres.setBounds(188, 293, 291, 26);
 		panelFondo.add(SalidaInteres);
 		SalidaInteres.setColumns(10);
 		
 		JButton BotonCalcular = new JButton("Calcular");
 		BotonCalcular.setOpaque(true);
 		BotonCalcular.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
-		BotonCalcular.setBackground(Color.GREEN);
+		BotonCalcular.setBackground(new Color(51, 152, 46));
 		BotonCalcular.setForeground(Color.BLACK);
 		BotonCalcular.setFocusPainted(false);
 		BotonCalcular.setBorderPainted(false);
@@ -143,7 +147,7 @@ public class CalcularInteres extends JFrame {
 				AccionCalcularInteres();
 			}
 		});
-		BotonCalcular.setBounds(251, 319, 117, 29);
+		BotonCalcular.setBounds(272, 331, 117, 29);
 		panelFondo.add(BotonCalcular);
 		SalidaSaldoActual.setText(EncontrarSaldo()+"");
 		
@@ -163,19 +167,19 @@ public class CalcularInteres extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(499, 342, 150, 39);
+		BotonVolver.setBounds(511, 371, 150, 39);
 		panelFondo.add(BotonVolver);
 		
-		lblNewLabel_2 = new JLabel("MES");
+		lblNewLabel_2 = new JLabel("MES:");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNewLabel_2.setBounds(144, 169, 45, 13);
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_2.setBounds(144, 198, 45, 13);
 		panelFondo.add(lblNewLabel_2);
 		
-		lblNewLabel_3 = new JLabel("ANO");
+		lblNewLabel_3 = new JLabel("AÑO:");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNewLabel_3.setBounds(144, 222, 45, 13);
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3.setBounds(144, 248, 45, 13);
 		panelFondo.add(lblNewLabel_3);
 		
 		lblNewLabel_4 = new JLabel("New label");
@@ -185,8 +189,8 @@ public class CalcularInteres extends JFrame {
 		
 		lblNewLabel_9 = new JLabel("Goliath National Bank");
 		lblNewLabel_9.setForeground(Color.WHITE);
-		lblNewLabel_9.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNewLabel_9.setBounds(22, 28, 162, 13);
+		lblNewLabel_9.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
+		lblNewLabel_9.setBounds(22, 28, 222, 13);
 		panelRojo.add(lblNewLabel_9);
 		
 		lblNewLabel_5 = new JLabel("Goliath National Bank");
@@ -196,17 +200,17 @@ public class CalcularInteres extends JFrame {
 		
 		lblNewLabel_6 = new JLabel("New label");
 		lblNewLabel_6.setIcon(new ImageIcon(CalcularInteres.class.getResource("/Imagenes/icono_saldo1.png")));
-		lblNewLabel_6.setBounds(489, 102, 45, 29);
+		lblNewLabel_6.setBounds(491, 144, 45, 29);
 		panelFondo.add(lblNewLabel_6);
 		
 		lblNewLabel_7 = new JLabel("New label");
 		lblNewLabel_7.setIcon(new ImageIcon(CalcularInteres.class.getResource("/Imagenes/42614320-calendario-icono-de-la-línea-de-arte-mes-para-aplicaciones-y-sitios-web.jpg")));
-		lblNewLabel_7.setBounds(489, 164, 45, 27);
+		lblNewLabel_7.setBounds(491, 192, 45, 27);
 		panelFondo.add(lblNewLabel_7);
 		
 		lblNewLabel_8 = new JLabel("New label");
 		lblNewLabel_8.setIcon(new ImageIcon(CalcularInteres.class.getResource("/Imagenes/42614320-calendario-icono-de-la-línea-de-arte-mes-para-aplicaciones-y-sitios-web.jpg")));
-		lblNewLabel_8.setBounds(489, 217, 45, 27);
+		lblNewLabel_8.setBounds(489, 242, 45, 27);
 		panelFondo.add(lblNewLabel_8);
 		for (int i=lib.Fecha(3);i<=lib.Fecha(3)+30;i++){
 			EntradaAno.addItem(i+"");

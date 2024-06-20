@@ -68,13 +68,13 @@ public class AdicionTipoCuenta extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("ADICIONAR TIPO DE CUENTA\r\n");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Noto Sans", Font.BOLD | Font.ITALIC, 24));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 24));
 		lblNewLabel.setForeground(Color.WHITE); // Texto en blanco
-		lblNewLabel.setBounds(10, 30, 499, 50);
+		lblNewLabel.setBounds(20, 35, 535, 50);
 		panelRojo.add(lblNewLabel);
 
 		JLabel lblNewLabel_2 = new JLabel("Goliath National Bank");
-		lblNewLabel_2.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(10, 10, 229, 13);
@@ -83,36 +83,36 @@ public class AdicionTipoCuenta extends JFrame {
 		JLabel separadorTitulo = new JLabel();
 		separadorTitulo.setBackground(Color.WHITE);
 		separadorTitulo.setOpaque(true);
-		separadorTitulo.setBounds(10, 90, 499, 2);
+		separadorTitulo.setBounds(20, 75, 499, 2);
 		panelRojo.add(separadorTitulo);
 
-		JLabel lblNewLabel_1 = new JLabel("Nombre:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_1 = new JLabel("NOMBRE:");
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_1.setForeground(Color.WHITE); // Texto en blanco
-		lblNewLabel_1.setBounds(92, 110, 98, 20);
+		lblNewLabel_1.setBounds(84, 126, 98, 20);
 		panelFondo.add(lblNewLabel_1);
 
 		EntradaNombre = new JTextField();
-		EntradaNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		EntradaNombre.setBounds(202, 108, 238, 26);
+		EntradaNombre.setFont(new Font("Courier New", Font.ITALIC, 14));
+		EntradaNombre.setBounds(215, 123, 238, 26);
 		panelFondo.add(EntradaNombre);
 		EntradaNombre.setColumns(10);
 
-		JLabel lblNewLabel_1_1 = new JLabel("Tipo de interés:");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_1_1 = new JLabel("TIPO DE INTERES:");
+		lblNewLabel_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_1_1.setForeground(Color.WHITE); // Texto en blanco
-		lblNewLabel_1_1.setBounds(84, 171, 125, 20);
+		lblNewLabel_1_1.setBounds(84, 185, 151, 20);
 		panelFondo.add(lblNewLabel_1_1);
 
-		JLabel lblNewLabel_1_2 = new JLabel("Interés:");
-		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_1_2 = new JLabel("INTERES:");
+		lblNewLabel_1_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_1_2.setForeground(Color.WHITE); // Texto en blanco
-		lblNewLabel_1_2.setBounds(92, 230, 98, 20);
+		lblNewLabel_1_2.setBounds(84, 243, 98, 20);
 		panelFondo.add(lblNewLabel_1_2);
 
 		EntradaInteres = new JTextField();
-		EntradaInteres.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		EntradaInteres.setBounds(202, 228, 238, 26);
+		EntradaInteres.setFont(new Font("Courier New", Font.ITALIC, 14));
+		EntradaInteres.setBounds(215, 240, 238, 26);
 		panelFondo.add(EntradaInteres);
 		EntradaInteres.setColumns(10);
 
@@ -125,7 +125,7 @@ public class AdicionTipoCuenta extends JFrame {
 		BotonAdicionar.setFocusPainted(false);
 		BotonAdicionar.setBorderPainted(false);
 		BotonAdicionar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		BotonAdicionar.setBounds(202, 277, 157, 49);
+		BotonAdicionar.setBounds(212, 287, 157, 49);
 		BotonAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionAdicionarTipoCuenta();
@@ -142,7 +142,7 @@ public class AdicionTipoCuenta extends JFrame {
 		BotonVolver.setFocusPainted(false);
 		BotonVolver.setBorderPainted(false);
 		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		BotonVolver.setBounds(365, 348, 144, 38);
+		BotonVolver.setBounds(367, 348, 144, 38);
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				base.CerrarConexion();
@@ -154,9 +154,8 @@ public class AdicionTipoCuenta extends JFrame {
 
 		String[] tipoIntereses = { "Mensual", "Anual" };
 		EntradaTipo = new JComboBox<String>(tipoIntereses);
-		EntradaTipo.setOpaque(true);
-		EntradaTipo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		EntradaTipo.setBounds(202, 168, 238, 26);
+		EntradaTipo.setFont(new Font("Courier New", Font.ITALIC, 14));
+		EntradaTipo.setBounds(212, 180, 245, 33);
 		panelFondo.add(EntradaTipo);
 
 		// Logo

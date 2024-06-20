@@ -51,8 +51,8 @@ public class MenuTipoCuenta extends JFrame {
 		JLabel lblNewLabel = new JLabel("MENU TIPO DE CUENTAS\n");
 		lblNewLabel.setForeground(new Color(254, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
-		lblNewLabel.setBounds(27, 44, 479, 43);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 26));
+		lblNewLabel.setBounds(37, 50, 479, 43);
 		panelRojo.add(lblNewLabel);
 		
 		JLabel separadorTitulo = new JLabel();
@@ -62,12 +62,13 @@ public class MenuTipoCuenta extends JFrame {
 		panelRojo.add(separadorTitulo);
 		
 		JLabel lblNewLabel_1 = new JLabel("GOLIATH NATIONAL BANK");
-		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
 		lblNewLabel_1.setForeground(new Color(254, 255, 255));
-		lblNewLabel_1.setBounds(27, 22, 204, 16);
+		lblNewLabel_1.setBounds(27, 22, 232, 16);
 		panelRojo.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Adicionar tipo de cuenta");
+		JButton btnNewButton = new JButton("Adicionar Tipo de Cuenta");
+		btnNewButton.setFont(new Font("Courier New", Font.ITALIC, 12));
 		btnNewButton.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/10.png")));
 		btnNewButton.setOpaque(true);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -78,10 +79,11 @@ public class MenuTipoCuenta extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(47, 112, 218, 67);
+		btnNewButton.setBounds(31, 140, 229, 67);
 		panelFondo.add(btnNewButton);
 		
-		JButton BotonEliminarTipoCuenta = new JButton("Eliminar tipo de cuenta");
+		JButton BotonEliminarTipoCuenta = new JButton("Eliminar TIpo de Cuenta");
+		BotonEliminarTipoCuenta.setFont(new Font("Courier New", Font.ITALIC, 12));
 		BotonEliminarTipoCuenta.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/12.png")));
 		BotonEliminarTipoCuenta.setOpaque(true);
 		BotonEliminarTipoCuenta.addActionListener(new ActionListener() {
@@ -90,10 +92,11 @@ public class MenuTipoCuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonEliminarTipoCuenta.setBounds(283, 112, 218, 67);
+		BotonEliminarTipoCuenta.setBounds(283, 140, 229, 67);
 		panelFondo.add(BotonEliminarTipoCuenta);
 		
-		JButton btnModificarTipoDe = new JButton("Modificar tipo de cuenta");
+		JButton btnModificarTipoDe = new JButton("Modificar Tipo de Cuenta");
+		btnModificarTipoDe.setFont(new Font("Courier New", Font.ITALIC, 12));
 		btnModificarTipoDe.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/Icono_modificacion.jpeg")));
 		btnModificarTipoDe.setOpaque(true);
 		btnModificarTipoDe.addActionListener(new ActionListener() {
@@ -104,7 +107,7 @@ public class MenuTipoCuenta extends JFrame {
 				dispose();
 			}
 		});
-		btnModificarTipoDe.setBounds(47, 219, 218, 67);
+		btnModificarTipoDe.setBounds(31, 238, 229, 67);
 		panelFondo.add(btnModificarTipoDe);
 		
 		JButton BotonVolver = new JButton("VOLVER");
@@ -125,10 +128,11 @@ public class MenuTipoCuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(350, 348, 179, 50);
+		BotonVolver.setBounds(333, 345, 179, 50);
 		panelFondo.add(BotonVolver);
 		
-		botonTablaTIposCuenta = new JButton("Tabla de tipos de cuenta");
+		botonTablaTIposCuenta = new JButton("Tabla Tipos de Cuenta");
+		botonTablaTIposCuenta.setFont(new Font("Courier New", Font.ITALIC, 12));
 		botonTablaTIposCuenta.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/icono_tabla.png")));
 		botonTablaTIposCuenta.setOpaque(true);
 		botonTablaTIposCuenta.addActionListener(new ActionListener() {
@@ -139,12 +143,12 @@ public class MenuTipoCuenta extends JFrame {
 				dispose();
 			}
 		});
-		botonTablaTIposCuenta.setBounds(283, 219, 218, 67);
+		botonTablaTIposCuenta.setBounds(283, 238, 229, 67);
 		panelFondo.add(botonTablaTIposCuenta);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon(MenuTipoCuenta.class.getResource("/Imagenes/2.jpg")));
-		lblNewLabel_2.setBounds(31, 351, 102, 43);
+		lblNewLabel_2.setBounds(31, 348, 102, 43);
 		panelFondo.add(lblNewLabel_2);
 	}
 

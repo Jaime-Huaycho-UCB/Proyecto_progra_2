@@ -75,24 +75,27 @@ public class SeleccionCuenta extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(SeleccionCuenta.class.getResource("/Imagenes/4.jpg")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
 		lblNewLabel.setBounds(10, 55, 594, 44);
 		panelRojo.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Carnet de identidad:");
+		JLabel lblNewLabel_1 = new JLabel("Doc. de identidad:");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblNewLabel_1.setBounds(91, 144, 141, 16);
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
+		lblNewLabel_1.setBounds(91, 144, 149, 16);
 		panelFondo.add(lblNewLabel_1);
 		
 		EntradaCi = new JTextField();
+		EntradaCi.setFont(new Font("Courier New", Font.ITALIC, 13));
 		EntradaCi.setBounds(238, 139, 130, 26);
 		panelFondo.add(EntradaCi);
 		EntradaCi.setColumns(10);
 		
-		JButton BotonBuscar = new JButton("Buscar");
+		JButton BotonBuscar = new JButton("BUSCAR");
+		BotonBuscar.setBackground(new Color(254, 255, 255));
+		BotonBuscar.setOpaque(true);
 		BotonBuscar.setIcon(new ImageIcon(SeleccionCuenta.class.getResource("/Imagenes/icono_buscar.png")));
-		BotonBuscar.setFont(new Font("Tahoma", Font.BOLD, 13));
+		BotonBuscar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		BotonBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ActualizarListaCuentas();
@@ -102,6 +105,7 @@ public class SeleccionCuenta extends JFrame {
 		panelFondo.add(BotonBuscar);
 		
 		EntradaCuenta = new JComboBox<String>();
+		EntradaCuenta.setFont(new Font("Courier New", Font.ITALIC, 13));
 		EntradaCuenta.setBounds(164, 203, 357, 27);
 		panelFondo.add(EntradaCuenta);
 		
@@ -128,12 +132,12 @@ public class SeleccionCuenta extends JFrame {
 		
 		BotonIngresar = new JButton("Ingresar");
 		BotonIngresar.setOpaque(true);
-		BotonIngresar.setBackground(Color.GREEN);
+		BotonIngresar.setBackground(new Color(51, 152, 46));
 		BotonIngresar.setFocusPainted(false);
 		BotonIngresar.setBorderPainted(false);
 		BotonIngresar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonIngresar.setIcon(new ImageIcon(SeleccionCuenta.class.getResource("/Imagenes/icono_ingresar.png")));
-		BotonIngresar.setForeground(Color.BLACK);
+		BotonIngresar.setForeground(new Color(0, 0, 0));
 		BotonIngresar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		BotonIngresar.setEnabled(false);
 		BotonIngresar.addActionListener(new ActionListener() {
@@ -146,14 +150,14 @@ public class SeleccionCuenta extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Cuenta:");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 13));
-		lblNewLabel_2.setBounds(91, 207, 61, 16);
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_2.setBounds(91, 207, 73, 16);
 		panelFondo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Goliath National Bank");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel_3.setBounds(10, 20, 174, 13);
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 17));
+		lblNewLabel_3.setBounds(10, 20, 238, 13);
 		panelRojo.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");

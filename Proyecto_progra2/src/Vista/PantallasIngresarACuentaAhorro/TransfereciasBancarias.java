@@ -51,21 +51,21 @@ public class TransfereciasBancarias extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 649, 536);
+		panelFondo.setBounds(0, 0, 697, 536);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
 
 		JPanel panelRojo = new JPanel();
-		panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
 		panelRojo.setBounds(0, -11, 689, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
 		panelFondo.add(panelRojo);
 		panelRojo.setLayout(null);
 		
 		JLabel separadorTitulo = new JLabel();
 		separadorTitulo.setBackground(Color.WHITE);
 		separadorTitulo.setOpaque(true);
-		separadorTitulo.setBounds(0, 99, 650, 2);
+		separadorTitulo.setBounds(10, 103, 650, 2);
 		panelRojo.add(separadorTitulo);
 
 
@@ -78,50 +78,54 @@ public class TransfereciasBancarias extends JFrame {
             }
         });
 		
-		JLabel lblNewLabel = new JLabel("Numero de cuenta:");
+		JLabel lblNewLabel = new JLabel("Numero de Cuenta:");
+		lblNewLabel.setBounds(104, 138, 153, 16);
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblNewLabel.setBounds(128, 135, 137, 16);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblNewLabel);
 		
 		JLabel lblMonto = new JLabel("Monto:");
+		lblMonto.setBounds(104, 187, 137, 16);
 		lblMonto.setForeground(Color.WHITE);
-		lblMonto.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblMonto.setBounds(128, 186, 137, 16);
+		lblMonto.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblMonto);
 		
 		JLabel lblMotivo = new JLabel("Motivo:");
+		lblMotivo.setBounds(104, 241, 137, 16);
 		lblMotivo.setForeground(Color.WHITE);
-		lblMotivo.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblMotivo.setBounds(128, 227, 137, 16);
+		lblMotivo.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblMotivo);
 		
 		EntradaCuentaReceptora = new JTextField();
 		EntradaCuentaReceptora.setBounds(277, 132, 214, 26);
+		EntradaCuentaReceptora.setFont(new Font("Courier New", Font.ITALIC, 13));
 		panelFondo.add(EntradaCuentaReceptora);
 		EntradaCuentaReceptora.setColumns(10);
 		
 		EntradaMonto = new JTextField();
-		EntradaMonto.setColumns(10);
 		EntradaMonto.setBounds(277, 181, 214, 26);
+		EntradaMonto.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaMonto.setColumns(10);
 		panelFondo.add(EntradaMonto);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(191, 254, 300, 155);
+		scrollPane.setFont(new Font("Courier New", Font.ITALIC, 14));
+		scrollPane.setBounds(191, 239, 300, 155);
 		panelFondo.add(scrollPane);
 		
 		EntradaMotivo = new JTextArea();
-		scrollPane.setViewportView(EntradaMotivo);
+		scrollPane.setColumnHeaderView(EntradaMotivo);
 		
 		JButton BotonTransferir = new JButton("Realizar transferencia");
+		BotonTransferir.setBounds(239, 420, 192, 43);
 		BotonTransferir.setOpaque(true);
-		BotonTransferir.setBackground(Color.GREEN);
+		BotonTransferir.setBackground(new Color(51, 152, 46));
 		BotonTransferir.setForeground(Color.BLACK);
 		BotonTransferir.setFocusPainted(false);
 		BotonTransferir.setBorderPainted(false);
 		BotonTransferir.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-		BotonTransferir.setFont(new Font("Tahoma", Font.BOLD, 11));
+		BotonTransferir.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 10));
 		BotonTransferir.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/icono_realizar.png")));
 		BotonTransferir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,10 +133,10 @@ public class TransfereciasBancarias extends JFrame {
 				AccionVolver();
 			}
 		});
-		BotonTransferir.setBounds(239, 420, 192, 43);
 		panelFondo.add(BotonTransferir);
 		
 		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setBounds(501, 476, 126, 33);
 		BotonVolver.setOpaque(true);
 		BotonVolver.setBackground(new Color(192, 57, 43));
 		BotonVolver.setForeground(Color.BLACK);
@@ -146,35 +150,34 @@ public class TransfereciasBancarias extends JFrame {
 				AccionVolver();
 			}
 		});
-		BotonVolver.setBounds(498, 473, 126, 33);
 		panelFondo.add(BotonVolver);
 		
 		JLabel lblNewLabel_1 = new JLabel("TRANSFERENCIA BANCARIA");
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/icono_trans.png")));
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 25));
-		lblNewLabel_1.setBounds(108, 41, 465, 60);
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel_1.setBounds(127, 45, 465, 60);
 		panelRojo.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/2.jpg")));
 		lblNewLabel_2.setBounds(10, 473, 103, 36);
+		lblNewLabel_2.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/2.jpg")));
 		panelFondo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Goliath National Bank");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblNewLabel_3.setBounds(10, 18, 177, 13);
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
+		lblNewLabel_3.setBounds(10, 18, 210, 13);
 		panelRojo.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/icono_saldo1.png")));
 		lblNewLabel_4.setBounds(501, 179, 45, 33);
+		lblNewLabel_4.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/icono_saldo1.png")));
 		panelFondo.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/4.jpg")));
 		lblNewLabel_5.setBounds(501, 134, 33, 20);
+		lblNewLabel_5.setIcon(new ImageIcon(TransfereciasBancarias.class.getResource("/Imagenes/4.jpg")));
 		panelFondo.add(lblNewLabel_5);
 	}
 

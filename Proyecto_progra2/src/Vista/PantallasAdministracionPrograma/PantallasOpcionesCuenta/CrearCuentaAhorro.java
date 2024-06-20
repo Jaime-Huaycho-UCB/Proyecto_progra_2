@@ -53,7 +53,7 @@ public class CrearCuentaAhorro extends JFrame {
 		panelFondo.setLayout(null);
 
 		JPanel panelRojo = new JPanel();
-		panelRojo.setBounds(0, -11, 632, 111);
+		panelRojo.setBounds(0, -11, 632, 118);
 		panelRojo.setBackground(new Color(183, 0, 0));
 		panelFondo.add(panelRojo);
 		panelRojo.setLayout(null);
@@ -65,7 +65,7 @@ public class CrearCuentaAhorro extends JFrame {
 		panelRojo.add(separadorTitulo);
 		
 		JLabel lblNewLabel_1 = new JLabel("GOLIATH NATIONAL BANK");
-		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 18));
 		lblNewLabel_1.setForeground(new Color(254, 255, 255));
 		lblNewLabel_1.setBounds(6, 30, 253, 16);
 		panelRojo.add(lblNewLabel_1);
@@ -82,12 +82,13 @@ public class CrearCuentaAhorro extends JFrame {
 		JLabel lblNewLabel = new JLabel("CREAR CUENTA DE AHORRO");
 		lblNewLabel.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/icono_crear.png")));
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(6, 46, 619, 65);
 		panelRojo.add(lblNewLabel);
 		
 		EntradaCi = new JTextField();
+		EntradaCi.setFont(new Font("Courier New", Font.ITALIC, 13));
 		EntradaCi.setBounds(261, 137, 227, 26);
 		panelFondo.add(EntradaCi);
 		EntradaCi.setColumns(10);
@@ -131,21 +132,24 @@ public class CrearCuentaAhorro extends JFrame {
 		panelFondo.add(BotonVolver);
 		
 		EntradaTipoCuenta = new JComboBox<String>();
-		EntradaTipoCuenta.setBounds(261, 209, 227, 27);
+		EntradaTipoCuenta.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaTipoCuenta.setBounds(257, 205, 236, 34);
 		panelFondo.add(EntradaTipoCuenta);
 		
-		JLabel lblNewLabel_2 = new JLabel("Carnet Identidad");
+		JLabel lblNewLabel_2 = new JLabel("DOC. IDENTIDAD:");
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_2.setBounds(113, 142, 136, 16);
 		lblNewLabel_2.setForeground(Color.WHITE);
 		panelFondo.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Tipo de cuenta");
-		lblNewLabel_3.setBounds(113, 213, 106, 16);
+		JLabel lblNewLabel_3 = new JLabel("TIPO DE CUENTA:");
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3.setBounds(113, 213, 136, 16);
 		lblNewLabel_3.setForeground(Color.WHITE);
 		panelFondo.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(16, 351, 100, 42);
+		lblNewLabel_4.setBounds(17, 351, 100, 42);
 		lblNewLabel_4.setIcon(new ImageIcon(CrearCuentaAhorro.class.getResource("/Imagenes/2.jpg")));
 		panelFondo.add(lblNewLabel_4);
 		LlenarTiposCuenta();

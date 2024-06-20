@@ -34,7 +34,7 @@ public class MenuIngresarACuenta extends JFrame {
 	public MenuIngresarACuenta(int numeroCuenta) {
 		this.numeroCuenta = numeroCuenta;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 684, 531);
+		setBounds(100, 100, 684, 465);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -42,7 +42,7 @@ public class MenuIngresarACuenta extends JFrame {
 		contentPane.setLayout(null);
 
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 689, 503);
+		panelFondo.setBounds(0, 0, 684, 439);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
@@ -67,6 +67,7 @@ public class MenuIngresarACuenta extends JFrame {
 		panelRojo.add(lblNewLabel);
 
 		JButton BotonReporte = new JButton("Reporte de cuenta");
+		BotonReporte.setOpaque(true);
 		BotonReporte.setFont(new Font("Dialog", Font.BOLD, 13));
 		BotonReporte.setBackground(new Color(16, 136, 188));
 		BotonReporte.setForeground(Color.BLACK);
@@ -203,7 +204,7 @@ public class MenuIngresarACuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonTransferencias.setBounds(198, 365, 215, 29);
+		BotonTransferencias.setBounds(225, 365, 215, 29);
 		panelFondo.add(BotonTransferencias);
 	}
 }

@@ -75,7 +75,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		BotonCrearCuentaAhorro.setBounds(132, 216, 318, 52);
 		BotonCrearCuentaAhorro.setOpaque(true);
 		BotonCrearCuentaAhorro .setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
-		BotonCrearCuentaAhorro .setBackground(Color.GREEN);
+		BotonCrearCuentaAhorro .setBackground(new Color(51, 152, 46));
 		BotonCrearCuentaAhorro .setForeground(Color.WHITE);
 		BotonCrearCuentaAhorro .setFocusPainted(false);
 		BotonCrearCuentaAhorro .setBorderPainted(false);
@@ -128,7 +128,7 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("OPCIONES DE CUENTAS DE AHORRO");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 23));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 24));
 		lblNewLabel.setBounds(87, 70, 447, 20);
 		panelRojo.add(lblNewLabel);
 		
@@ -139,8 +139,8 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Goliath National Bank");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
-		lblNewLabel_2.setBounds(6, 12, 180, 46);
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 17));
+		lblNewLabel_2.setBounds(6, 12, 238, 46);
 		panelRojo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
