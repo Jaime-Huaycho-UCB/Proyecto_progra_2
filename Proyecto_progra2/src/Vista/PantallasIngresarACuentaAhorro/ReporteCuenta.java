@@ -226,10 +226,7 @@ public class ReporteCuenta extends JFrame {
 		BotonVolver.setIcon(new ImageIcon(ReporteCuenta.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				base.CerrarConexion();
-				MenuIngresarACuenta ventanMenuIngresarACuenta = new MenuIngresarACuenta(getNumeroCuenta());
-				ventanMenuIngresarACuenta.setLocationRelativeTo(null);
-				ventanMenuIngresarACuenta.setVisible(true);
+				lib.CambiarPantalla(new MenuIngresarACuenta(getNumeroCuenta()));
 				dispose();
 			}
 		});
@@ -249,7 +246,6 @@ public class ReporteCuenta extends JFrame {
 	}
 
 	public void LlenarDatos(){
-		System.out.println("fase 1");
 		String query = "select PERSONAS.nombre,PERSONAS.apellidoPaterno,PERSONAS.apellidoMaterno,CUENTAS_AHORRO.numeroCuenta,PERSONAS.ci,TIPOS_CUENTA.nombre as nombreTipoCuenta,TIPOS_CUENTA.tipoInteres,CUENTAS_AHORRO.fechaApertura,TIPOS_CUENTA.interes,CUENTAS_AHORRO.saldo "+
 					"from CUENTAS_AHORRO,PERSONAS,TIPOS_CUENTA "+
 					"where CUENTAS_AHORRO.ciPersona=PERSONAS.ci and TIPOS_CUENTA.id=CUENTAS_AHORRO.tipo and CUENTAS_AHORRO.numeroCuenta="+getNumeroCuenta();
@@ -284,7 +280,6 @@ public class ReporteCuenta extends JFrame {
 				tab[f][1]=ejecutar.getDouble("monto");
 				tab[f][2]=ejecutar.getString("descripcion");
 				f+=1;
-				System.out.println(f);
 			}
 		} catch (Exception e) {
 			lib.MostrarMensaje(e.getMessage()+"111111");

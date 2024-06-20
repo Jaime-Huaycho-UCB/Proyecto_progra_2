@@ -185,10 +185,10 @@ public class TransfereciasBancarias extends JFrame {
 			int cuentaReceptora = Integer.parseInt(EntradaCuentaReceptora.getText());
 			double monto = Double.parseDouble(EntradaMonto.getText());
 			String motivo = EntradaMotivo.getText();
-			saldoReceptor=EncontrarSaldo(cuentaReceptora);
 			if (monto<=saldoEmisor){
 				IngresaNuevaTransferencia(cuentaReceptora, lib.Fecha(), monto, motivo);
 				ActualizarSaldoCuenta(getNumeroCuenta(),saldoEmisor-monto);
+				saldoReceptor=EncontrarSaldo(cuentaReceptora);
 				ActualizarSaldoCuenta(cuentaReceptora, saldoReceptor+monto);
 			}else{
 				lib.MostrarMensaje("No puedes retirar "+monto+" bs, tu saldo es de "+saldoEmisor+" bs");
