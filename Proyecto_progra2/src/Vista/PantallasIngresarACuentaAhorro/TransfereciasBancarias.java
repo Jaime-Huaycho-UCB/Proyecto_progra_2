@@ -197,6 +197,8 @@ public class TransfereciasBancarias extends JFrame {
 				}else{
 					lib.MostrarMensaje("No puedes retirar "+monto+" bs, tu saldo es de "+saldoEmisor+" bs");
 				}
+			}else{
+				lib.MostrarMensaje("No es encontro la cuenta");
 			}
 		} catch (NumberFormatException e) {
 			lib.MostrarMensaje("Respeta los formatos de entrada");
