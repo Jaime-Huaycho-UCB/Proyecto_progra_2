@@ -89,6 +89,7 @@ public class ReporteCuenta extends JFrame {
         });
 		
 		JLabel lblNewLabel = new JLabel("REPORTE CUENTA");
+		lblNewLabel.setIcon(new ImageIcon(ReporteCuenta.class.getResource("/Imagenes/icono_reporte.png")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 29));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

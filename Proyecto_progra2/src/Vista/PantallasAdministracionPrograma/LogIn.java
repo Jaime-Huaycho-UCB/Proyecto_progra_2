@@ -32,7 +32,7 @@ public class LogIn extends JFrame {
 		setContentPane(borderPanel);
 
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(44, 62, 80)); // Color de fondo existente
+		contentPane.setBackground(new Color(67, 80, 169)); // Color de fondo existente
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		borderPanel.add(contentPane, BorderLayout.CENTER);
 		contentPane.setLayout(null);

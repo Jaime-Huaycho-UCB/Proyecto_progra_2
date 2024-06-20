@@ -82,6 +82,7 @@ public class RealizarTransaccion extends JFrame {
         });
 		
 		JLabel lblNewLabel = new JLabel("REALIZAR UNA TRANSACCION ");
+		lblNewLabel.setIcon(new ImageIcon(RealizarTransaccion.class.getResource("/Imagenes/icono_tranferencia.jpg")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 26));

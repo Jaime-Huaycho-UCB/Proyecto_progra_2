@@ -6,8 +6,12 @@ import javax.swing.border.EmptyBorder;
 import Librerias.Libreria;
 import Modelo.BaseDatos;
 import Vista.PantallasAdministracionPrograma.PantallasOpcionesCuenta.CrearCuentaAhorro;
+import Vista.PantallasIngresarACuentaAhorro.SeleccionCuenta;
 
 import javax.swing.JLabel;
+
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -16,6 +20,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
 
 public class PantallaRegistroPersona extends JFrame {
 
@@ -41,6 +46,8 @@ public class PantallaRegistroPersona extends JFrame {
 	public String[] anos=new String[1];
 
 	public int n=0;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
 	public int getN() {
 		return n;
 	}
@@ -59,6 +66,25 @@ public class PantallaRegistroPersona extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, 0, 924, 557);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBackground(new Color(183, 0, 0)); // Rojo oscuro
+		panelRojo.setBounds(0, -11, 924, 111);
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+		
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(0, 99, 900, 2);
+		panelRojo.add(separadorTitulo);
+
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -70,47 +96,74 @@ public class PantallaRegistroPersona extends JFrame {
         });
 		
 		JLabel lblNewLabel = new JLabel("Registro de personas");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setIcon(new ImageIcon(PantallaRegistroPersona.class.getResource("/Imagenes/4.jpg")));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
-		lblNewLabel.setBounds(6, 37, 905, 49);
-		contentPane.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 27));
+		lblNewLabel.setBounds(10, 38, 905, 49);
+		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Carnet de identidad");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1.setBounds(94, 116, 141, 16);
-		contentPane.add(lblNewLabel_1);
+		panelFondo.add(lblNewLabel_1);
 		
 		EntradaCarnet = new JTextField();
 		EntradaCarnet.setBounds(229, 111, 207, 26);
-		contentPane.add(EntradaCarnet);
+		panelFondo.add(EntradaCarnet);
 		EntradaCarnet.setColumns(10);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Nombres");
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1.setBounds(94, 174, 141, 16);
-		contentPane.add(lblNewLabel_1_1);
+		panelFondo.add(lblNewLabel_1_1);
 		
 		EntradaNombre = new JTextField();
 		EntradaNombre.setColumns(10);
 		EntradaNombre.setBounds(229, 169, 207, 26);
-		contentPane.add(EntradaNombre);
+		panelFondo.add(EntradaNombre);
 		
 		JLabel lblNewLabel_1_1_3 = new JLabel("Fecha de nacimiento");
+		lblNewLabel_1_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_1_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_3.setBounds(486, 244, 141, 16);
-		contentPane.add(lblNewLabel_1_1_3);
+		panelFondo.add(lblNewLabel_1_1_3);
 		
 		JLabel lblNewLabel_1_1_4 = new JLabel("Genero");
+		lblNewLabel_1_1_4.setForeground(Color.WHITE);
+		lblNewLabel_1_1_4.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_4.setBounds(486, 310, 141, 16);
-		contentPane.add(lblNewLabel_1_1_4);
+		panelFondo.add(lblNewLabel_1_1_4);
 		
 		JButton BotonRegistrar = new JButton("Registrar");
+		BotonRegistrar.setOpaque(true);
+		BotonRegistrar.setBackground(Color.GREEN);
+		BotonRegistrar.setForeground(Color.BLACK);
+		BotonRegistrar.setFocusPainted(false);
+		BotonRegistrar.setBorderPainted(false);
+		BotonRegistrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonRegistrar.setIcon(new ImageIcon(PantallaRegistroPersona.class.getResource("/Imagenes/10.png")));
+		BotonRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		BotonRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionRegistrarPersona();
 			}
 		});
 		BotonRegistrar.setBounds(486, 429, 187, 70);
-		contentPane.add(BotonRegistrar);
+		panelFondo.add(BotonRegistrar);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setOpaque(true);
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.BLACK);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setIcon(new ImageIcon(SeleccionCuenta.class.getResource("/Imagenes/8.1.png")));
+		BotonVolver.setIcon(new ImageIcon(PantallaRegistroPersona.class.getResource("/Imagenes/8.1.png")));
+		BotonVolver.setFont(new Font("Tahoma", Font.BOLD, 14));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				base.CerrarConexion();
@@ -125,15 +178,15 @@ public class PantallaRegistroPersona extends JFrame {
 			}
 		});
 		BotonVolver.setBounds(229, 429, 187, 70);
-		contentPane.add(BotonVolver);
+		panelFondo.add(BotonVolver);
 		
 		EntradaDia = new JComboBox<String>(dias);
 		EntradaDia.setBounds(621, 240, 72, 27);
-		contentPane.add(EntradaDia);
+		panelFondo.add(EntradaDia);
 		
 		EntradaMes = new JComboBox<String>(meses);
 		EntradaMes.setBounds(683, 240, 72, 27);
-		contentPane.add(EntradaMes);
+		panelFondo.add(EntradaMes);
 		EntradaMes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 				EntradaDia.removeAllItems();
@@ -143,11 +196,11 @@ public class PantallaRegistroPersona extends JFrame {
 		
 		EntradaAno = new JComboBox<String>(anos);
 		EntradaAno.setBounds(747, 240, 95, 27);
-		contentPane.add(EntradaAno);
+		panelFondo.add(EntradaAno);
 
 		EntradaGenero = new JComboBox<String>();
 		EntradaGenero.setBounds(621, 306, 221, 27);
-		contentPane.add(EntradaGenero);
+		panelFondo.add(EntradaGenero);
 
 		EntradaPais = new JComboBox<String>();
 		EntradaPais.addActionListener(new ActionListener() {
@@ -157,46 +210,67 @@ public class PantallaRegistroPersona extends JFrame {
         });
 
 		EntradaPais.setBounds(229, 241, 207, 27);
-		contentPane.add(EntradaPais);
+		panelFondo.add(EntradaPais);
 		
 		EntradaCiudad = new JComboBox<String>();
 		EntradaCiudad.setBounds(229, 307, 207, 27);
-		contentPane.add(EntradaCiudad);
+		panelFondo.add(EntradaCiudad);
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Apellido paterno");
+		lblNewLabel_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_1_1.setBounds(486, 115, 141, 16);
-		contentPane.add(lblNewLabel_1_1_1_1);
+		panelFondo.add(lblNewLabel_1_1_1_1);
 		
 		EntradaApellidoPaterno = new JTextField();
 		EntradaApellidoPaterno.setColumns(10);
 		EntradaApellidoPaterno.setBounds(621, 110, 221, 26);
-		contentPane.add(EntradaApellidoPaterno);
+		panelFondo.add(EntradaApellidoPaterno);
 		
 		JLabel lblNewLabel_1_1_2_1 = new JLabel("Apellido materno");
+		lblNewLabel_1_1_2_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_2_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_2_1.setBounds(486, 174, 141, 16);
-		contentPane.add(lblNewLabel_1_1_2_1);
+		panelFondo.add(lblNewLabel_1_1_2_1);
 		
 		EntradaApellidoMaterno = new JTextField();
 		EntradaApellidoMaterno.setColumns(10);
 		EntradaApellidoMaterno.setBounds(621, 169, 221, 26);
-		contentPane.add(EntradaApellidoMaterno);
+		panelFondo.add(EntradaApellidoMaterno);
 		
 		JLabel lblNewLabel_1_1_5_1 = new JLabel("Pais");
+		lblNewLabel_1_1_5_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_5_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_5_1.setBounds(94, 245, 141, 16);
-		contentPane.add(lblNewLabel_1_1_5_1);
+		panelFondo.add(lblNewLabel_1_1_5_1);
 		
 		JLabel lblNewLabel_1_1_5_2 = new JLabel("Ciudad");
+		lblNewLabel_1_1_5_2.setForeground(Color.WHITE);
+		lblNewLabel_1_1_5_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_5_2.setBounds(94, 311, 141, 16);
-		contentPane.add(lblNewLabel_1_1_5_2);
+		panelFondo.add(lblNewLabel_1_1_5_2);
 		
 		JLabel lblNewLabel_1_1_5_3 = new JLabel("Direccion");
+		lblNewLabel_1_1_5_3.setForeground(Color.WHITE);
+		lblNewLabel_1_1_5_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1_1_5_3.setBounds(94, 382, 141, 16);
-		contentPane.add(lblNewLabel_1_1_5_3);
+		panelFondo.add(lblNewLabel_1_1_5_3);
 		
 		EntradaDireccion = new JTextField();
 		EntradaDireccion.setColumns(10);
 		EntradaDireccion.setBounds(229, 377, 613, 26);
-		contentPane.add(EntradaDireccion);
+		panelFondo.add(EntradaDireccion);
+		
+		lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(PantallaRegistroPersona.class.getResource("/Imagenes/2.jpg")));
+		lblNewLabel_2.setBounds(778, 25, 104, 40);
+		panelRojo.add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("Goliath National Bank");
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 18));
+		lblNewLabel_3.setBounds(10, 25, 233, 13);
+		panelRojo.add(lblNewLabel_3);
 		LLenarListaGeneros();
 		ActualizarListaPaises();
 		

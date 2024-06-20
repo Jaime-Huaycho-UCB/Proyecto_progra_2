@@ -38,7 +38,7 @@ public class PantallaAdministracionPrograma extends JFrame {
         setIconImage(icono.getImage());
 
         contentPane = new JPanel();
-        contentPane.setBackground(new Color(52, 73, 94)); // Color de fondo más llamativo
+        contentPane.setBackground(new Color(67, 80, 169)); // Color de fondo más llamativo
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);

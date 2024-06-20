@@ -32,7 +32,7 @@ public class PantallaInicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 722, 394);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(28, 49, 84));
+		contentPane.setBackground(new Color(67, 80, 169));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -89,7 +89,7 @@ public class PantallaInicio extends JFrame {
 		txtGoliathBankGfxfgxrtxtrrt.setHorizontalAlignment(SwingConstants.CENTER);
 		txtGoliathBankGfxfgxrtxtrrt.setForeground(new Color(254, 255, 255));
 		txtGoliathBankGfxfgxrtxtrrt.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 30));
-		txtGoliathBankGfxfgxrtxtrrt.setBackground(new Color(120, 32, 24));
+		txtGoliathBankGfxfgxrtxtrrt.setBackground(new Color(183, 0, 0));
 		txtGoliathBankGfxfgxrtxtrrt.setText("GOLIATH NATIONAL BANK");
 		txtGoliathBankGfxfgxrtxtrrt.setBounds(-25, 6, 777, 91);
 		contentPane.add(txtGoliathBankGfxfgxrtxtrrt);

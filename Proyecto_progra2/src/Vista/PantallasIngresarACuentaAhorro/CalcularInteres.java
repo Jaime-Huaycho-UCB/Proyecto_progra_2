@@ -90,9 +90,10 @@ public class CalcularInteres extends JFrame {
         });
 		
 		JLabel lblNewLabel = new JLabel("CALCULA TU INTERES");
+		lblNewLabel.setIcon(new ImageIcon(CalcularInteres.class.getResource("/Imagenes/icono_interes.png")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-		lblNewLabel.setBounds(194, 30, 307, 65);
+		lblNewLabel.setBounds(162, 30, 339, 65);
 		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Saldo actual:");

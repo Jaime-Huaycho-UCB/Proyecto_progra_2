@@ -160,7 +160,7 @@ public class MenuIngresarACuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonTransferenciaBancaria.setBounds(343, 235, 285, 65);
+		BotonTransferenciaBancaria.setBounds(343, 235, 267, 65);
 		panelFondo.add(BotonTransferenciaBancaria);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
@@ -189,7 +189,7 @@ public class MenuIngresarACuenta extends JFrame {
 	        JLabel separador4 = new JLabel();
 	        separador4.setBackground(Color.WHITE);
 	        separador4.setOpaque(true);
-	        separador4.setBounds(343, 310, 280, 2);
+	        separador4.setBounds(343, 315, 267, 2);
 	        panelFondo.add(separador4);
 	}
 }
