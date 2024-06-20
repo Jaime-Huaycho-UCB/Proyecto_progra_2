@@ -60,12 +60,24 @@ public class MenuIngresarACuenta extends JFrame {
 		separadorTitulo.setBounds(10, 99, 650, 2);
 		panelRojo.add(separadorTitulo);
 
-		JLabel lblNewLabel = new JLabel("BIENVENDIDO A GOLIATH NATIONAL BANK");
+		JLabel lblNewLabel = new JLabel("GOLIATH NATIONAL BANK");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(-13, 44, 672, 57);
+		lblNewLabel.setBounds(20, 48, 672, 57);
 		panelRojo.add(lblNewLabel);
+		
+				JLabel lblNewLabel_1 = new JLabel("New label");
+				lblNewLabel_1.setBounds(10, 18, 103, 50);
+				panelRojo.add(lblNewLabel_1);
+				lblNewLabel_1.setIcon(new ImageIcon(MenuIngresarACuenta.class.getResource("/Imagenes/2.jpg")));
+				
+				JLabel lblBienvendidoA = new JLabel("BIENVENDIDO A");
+				lblBienvendidoA.setHorizontalAlignment(SwingConstants.CENTER);
+				lblBienvendidoA.setForeground(Color.WHITE);
+				lblBienvendidoA.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
+				lblBienvendidoA.setBounds(20, 13, 672, 57);
+				panelRojo.add(lblBienvendidoA);
 
 		JButton BotonReporte = new JButton("Reporte de cuenta");
 		BotonReporte.setOpaque(true);
@@ -146,7 +158,7 @@ public class MenuIngresarACuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver_1.setBounds(533, 448, 145, 50);
+		BotonVolver_1.setBounds(533, 452, 129, 42);
 		panelFondo.add(BotonVolver_1);
 
 		JButton BotonTransferenciaBancaria = new JButton("Realizar Transferencia");
@@ -168,11 +180,6 @@ public class MenuIngresarACuenta extends JFrame {
 		});
 		BotonTransferenciaBancaria.setBounds(343, 235, 267, 65);
 		panelFondo.add(BotonTransferenciaBancaria);
-
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(MenuIngresarACuenta.class.getResource("/Imagenes/2.jpg")));
-		lblNewLabel_1.setBounds(6, 447, 103, 50);
-		panelFondo.add(lblNewLabel_1);
 
 		JLabel separador1 = new JLabel();
 		separador1.setBackground(Color.WHITE);
@@ -201,12 +208,12 @@ public class MenuIngresarACuenta extends JFrame {
 		JLabel separador5 = new JLabel();
 		separador5.setBackground(Color.WHITE);
 		separador5.setOpaque(true);
-		separador5.setBounds(206, 429, 267, 2);
+		separador5.setBounds(202, 429, 267, 2);
 		panelFondo.add(separador5);
 
-		botonTransferencias = new JButton("Reporte de transferencias");
+		botonTransferencias = new JButton("Reporte Transferencias");
 		botonTransferencias.setIcon(new ImageIcon(MenuIngresarACuenta.class.getResource("/Imagenes/icono_reporte.png")));
-		botonTransferencias.setFont(new Font("Dialog", Font.BOLD, 14));
+		botonTransferencias.setFont(new Font("Courier New", Font.BOLD, 13));
 		botonTransferencias.setBackground(new Color(255, 147, 0));
 		botonTransferencias.setForeground(Color.BLACK);
 		botonTransferencias.setFocusPainted(false);
@@ -219,7 +226,7 @@ public class MenuIngresarACuenta extends JFrame {
 				dispose();
 			}
 		});
-		botonTransferencias.setBounds(225, 342, 229, 75);
+		botonTransferencias.setBounds(223, 342, 236, 75);
 		panelFondo.add(botonTransferencias);
 	}
 }

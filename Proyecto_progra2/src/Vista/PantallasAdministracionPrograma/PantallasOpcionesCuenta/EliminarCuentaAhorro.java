@@ -68,12 +68,13 @@ public class EliminarCuentaAhorro extends JFrame {
 		});
 		
 		EntradaNumeroCuenta = new JTextField();
-		EntradaNumeroCuenta.setBounds(263, 139, 203, 26);
+		EntradaNumeroCuenta.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaNumeroCuenta.setBounds(260, 135, 208, 26);
 		panelFondo.add(EntradaNumeroCuenta);
 		EntradaNumeroCuenta.setColumns(10);
 		
 		  JButton BotonEliminar = new JButton("ELIMINAR");
-		  BotonEliminar.setBounds(232, 201, 154, 43);
+		  BotonEliminar.setBounds(245, 198, 154, 43);
 	        BotonEliminar.setOpaque(true);
 	        BotonEliminar.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 	        BotonEliminar.setBackground(new Color(51, 152, 46)); // Rojo oscuro
@@ -90,13 +91,13 @@ public class EliminarCuentaAhorro extends JFrame {
 		});
 		panelFondo.add(BotonEliminar);
 		
-		JLabel lblNewLabel = new JLabel("Numero de cuenta");
-		lblNewLabel.setBounds(79, 141, 154, 16);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		JLabel lblNewLabel = new JLabel("Numero de Cuenta:");
+		lblNewLabel.setBounds(86, 139, 154, 16);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		panelFondo.add(lblNewLabel);
 		
 		JButton BotonVolver = new JButton("VOLVER");
-		BotonVolver.setBounds(461, 248, 154, 29);
+		BotonVolver.setBounds(468, 249, 154, 29);
 		BotonVolver.setOpaque(true);
 		BotonVolver.setBackground(new Color(192, 57, 43));
 		BotonVolver.setForeground(Color.BLACK);
@@ -104,7 +105,7 @@ public class EliminarCuentaAhorro extends JFrame {
 		BotonVolver.setBorderPainted(false);
 		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonVolver.setIcon(new ImageIcon(EliminarCuentaAhorro.class.getResource("/Imagenes/8.1.png")));
-		BotonVolver.setFont(new Font("Tahoma", Font.BOLD, 14));
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuOpcionesCuentaAhorro(),base);
@@ -114,18 +115,20 @@ public class EliminarCuentaAhorro extends JFrame {
 		panelFondo.add(BotonVolver);
 		
 		JLabel lblNewLabel_1 = new JLabel("ELIMINAR CUENTA\r\n");
+		lblNewLabel_1.setForeground(new Color(254, 255, 255));
 		lblNewLabel_1.setIcon(new ImageIcon(EliminarCuentaAhorro.class.getResource("/Imagenes/11.png")));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel_1.setBounds(139, 43, 320, 60);
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 24));
+		lblNewLabel_1.setBounds(166, 41, 320, 60);
 		panelRojo.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Goliath National Bank");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_3.setBounds(10, 10, 172, 13);
+		lblNewLabel_3.setForeground(new Color(254, 255, 255));
+		lblNewLabel_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3.setBounds(10, 10, 216, 13);
 		panelRojo.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(10, 243, 109, 43);
+		lblNewLabel_2.setBounds(16, 241, 109, 43);
 		lblNewLabel_2.setIcon(new ImageIcon(EliminarCuentaAhorro.class.getResource("/Imagenes/2.jpg")));
 		panelFondo.add(lblNewLabel_2);
 	}

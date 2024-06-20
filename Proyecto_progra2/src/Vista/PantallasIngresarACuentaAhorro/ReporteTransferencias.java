@@ -53,13 +53,13 @@ public class ReporteTransferencias extends JFrame {
 		
 
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(6, 0, 698, 726);
+		panelFondo.setBounds(0, 0, 720, 750);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
 
 		JPanel panelRojo = new JPanel();
-		panelRojo.setBounds(0, -11, 698, 111);
+		panelRojo.setBounds(0, -11, 719, 111);
 		panelRojo.setBackground(new Color(183, 0, 0));
 		panelFondo.add(panelRojo);
 		panelRojo.setLayout(null);
@@ -71,13 +71,15 @@ public class ReporteTransferencias extends JFrame {
 		panelRojo.add(separadorTitulo);
 		
 		JLabel lblNewLabel = new JLabel("REPORTE DE TRANFERENCIAS");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 24));
-		lblNewLabel.setBounds(182, 55, 379, 32);
+		lblNewLabel.setForeground(new Color(254, 255, 255));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel.setBounds(170, 55, 379, 32);
 		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Goliath National Bank");
-		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.BOLD, 14));
-		lblNewLabel_1.setBounds(21, 22, 174, 16);
+		lblNewLabel_1.setForeground(new Color(254, 255, 255));
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1.setBounds(21, 22, 218, 16);
 		panelRojo.add(lblNewLabel_1);
 
 		addWindowListener(new WindowAdapter() {
@@ -97,6 +99,7 @@ public class ReporteTransferencias extends JFrame {
 
 		Recibidos = LlenarTabla(1);
 		TablaRecibidos = new JTable(Recibidos,atributos);
+		TablaRecibidos.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane.setViewportView(TablaRecibidos);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -105,15 +108,17 @@ public class ReporteTransferencias extends JFrame {
 		
 		Enviados=LlenarTabla(2);
 		TablaEnviados = new JTable(Enviados,atributos);
+		TablaEnviados.setFont(new Font("Courier New", Font.ITALIC, 13));
 		scrollPane_1.setViewportView(TablaEnviados);
 		
-		JLabel lblRecibidos = new JLabel("RECIBIDOS\r\n");
-		lblRecibidos.setBounds(316, 121, 105, 16);
-		lblRecibidos.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel lblRecibidos = new JLabel("RECIBIDOS\r:\n");
+		lblRecibidos.setBounds(316, 121, 117, 16);
+		lblRecibidos.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblRecibidos);
 		
-		JLabel lblEnviados = new JLabel("Enviados");
-		lblEnviados.setBounds(327, 384, 61, 16);
+		JLabel lblEnviados = new JLabel("Enviados:");
+		lblEnviados.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblEnviados.setBounds(327, 384, 81, 16);
 		panelFondo.add(lblEnviados);
 		
 		JButton BotonVolver = new JButton("VOLVER");
@@ -134,7 +139,7 @@ public class ReporteTransferencias extends JFrame {
 		});
 		panelFondo.add(BotonVolver);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
+		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setBounds(6, 664, 117, 41);
 		lblNewLabel_2.setIcon(new ImageIcon(ReporteTransferencias.class.getResource("/Imagenes/2.jpg")));
 		panelFondo.add(lblNewLabel_2);
