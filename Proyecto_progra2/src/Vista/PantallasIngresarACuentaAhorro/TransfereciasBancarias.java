@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 
 import java.awt.event.*;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.sql.ResultSet;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -186,19 +186,37 @@ public class TransfereciasBancarias extends JFrame {
 		double saldoReceptor = 0.00;
 		try {
 			int cuentaReceptora = Integer.parseInt(EntradaCuentaReceptora.getText());
-			double monto = Double.parseDouble(EntradaMonto.getText());
-			String motivo = EntradaMotivo.getText();
-			if (monto<=saldoEmisor){
-				IngresaNuevaTransferencia(cuentaReceptora, lib.Fecha(), monto, motivo);
-				ActualizarSaldoCuenta(getNumeroCuenta(),saldoEmisor-monto);
-				saldoReceptor=EncontrarSaldo(cuentaReceptora);
-				ActualizarSaldoCuenta(cuentaReceptora, saldoReceptor+monto);
-			}else{
-				lib.MostrarMensaje("No puedes retirar "+monto+" bs, tu saldo es de "+saldoEmisor+" bs");
+			if (CiExistente(cuentaReceptora)){
+				double monto = Double.parseDouble(EntradaMonto.getText());
+				String motivo = EntradaMotivo.getText();
+				if (monto<=saldoEmisor){
+					IngresaNuevaTransferencia(cuentaReceptora, lib.Fecha(), monto, motivo);
+					ActualizarSaldoCuenta(getNumeroCuenta(),saldoEmisor-monto);
+					saldoReceptor=EncontrarSaldo(cuentaReceptora);
+					ActualizarSaldoCuenta(cuentaReceptora, saldoReceptor+monto);
+				}else{
+					lib.MostrarMensaje("No puedes retirar "+monto+" bs, tu saldo es de "+saldoEmisor+" bs");
+				}
 			}
 		} catch (NumberFormatException e) {
 			lib.MostrarMensaje("Respeta los formatos de entrada");
 		}
+
+		
+	}
+
+	public boolean CiExistente(int ci){
+		String query = "SELECT Count(0) FROM CUENTAS_AHORRO WHERE numeroCuenta = "+ci;
+		try {
+			Statement consulta = base.getConexion().createStatement();
+			ResultSet ejecutar = consulta.executeQuery(query);
+			if (ejecutar.next()){
+				return (ejecutar.getInt(1)!=0? true : false);
+			}
+		} catch (Exception e) {
+			
+		}
+		return false;
 	}
 
 	public double EncontrarSaldo(int numeroCuenta){
