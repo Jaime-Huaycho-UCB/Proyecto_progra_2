@@ -14,7 +14,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class ReporteTransferencias extends JFrame {
 
@@ -46,6 +49,36 @@ public class ReporteTransferencias extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
+
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(6, 0, 698, 726);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBounds(0, -11, 698, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(10, 99, 650, 2);
+		panelRojo.add(separadorTitulo);
+		
+		JLabel lblNewLabel = new JLabel("REPORTE DE TRANFERENCIAS");
+		lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 24));
+		lblNewLabel.setBounds(182, 55, 379, 32);
+		panelRojo.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Goliath National Bank");
+		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.BOLD, 14));
+		lblNewLabel_1.setBounds(21, 22, 174, 16);
+		panelRojo.add(lblNewLabel_1);
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -58,7 +91,7 @@ public class ReporteTransferencias extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(76, 147, 565, 219);
-		contentPane.add(scrollPane);
+		panelFondo.add(scrollPane);
 		
 		String[] atributos = {"De","Para","Fecha","Monto","Motivo"};
 
@@ -68,30 +101,43 @@ public class ReporteTransferencias extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(76, 410, 565, 219);
-		contentPane.add(scrollPane_1);
+		panelFondo.add(scrollPane_1);
 		
 		Enviados=LlenarTabla(2);
 		TablaEnviados = new JTable(Enviados,atributos);
 		scrollPane_1.setViewportView(TablaEnviados);
 		
 		JLabel lblRecibidos = new JLabel("RECIBIDOS\r\n");
+		lblRecibidos.setBounds(316, 121, 105, 16);
 		lblRecibidos.setFont(new Font("Tahoma", Font.BOLD, 10));
-		lblRecibidos.setBounds(316, 121, 61, 16);
-		contentPane.add(lblRecibidos);
+		panelFondo.add(lblRecibidos);
 		
 		JLabel lblEnviados = new JLabel("Enviados");
 		lblEnviados.setBounds(327, 384, 61, 16);
-		contentPane.add(lblEnviados);
+		panelFondo.add(lblEnviados);
 		
-		JButton BotonVolver = new JButton("Volver");
+		JButton BotonVolver = new JButton("VOLVER");
+		BotonVolver.setBounds(569, 684, 117, 29);
+		BotonVolver.setOpaque(true);
+		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
+		BotonVolver.setBackground(new Color(192, 57, 43));
+		BotonVolver.setForeground(Color.BLACK);
+		BotonVolver.setFocusPainted(false);
+		BotonVolver.setBorderPainted(false);
+		BotonVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		BotonVolver.setIcon(new ImageIcon(ReporteTransferencias.class.getResource("/Imagenes/8.1.png")));
 		BotonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuIngresarACuenta(getNumeroCuenta()),base);
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(569, 684, 117, 29);
-		contentPane.add(BotonVolver);
+		panelFondo.add(BotonVolver);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(6, 664, 117, 41);
+		lblNewLabel_2.setIcon(new ImageIcon(ReporteTransferencias.class.getResource("/Imagenes/2.jpg")));
+		panelFondo.add(lblNewLabel_2);
 	}
 
 	public Object[][] LlenarTabla(int tipo){

@@ -26,6 +26,7 @@ public class MenuIngresarACuenta extends JFrame {
 	private JPanel contentPane;
 
 	public int numeroCuenta;
+	private JButton botonTransferencias;
 
 	public int getNumeroCuenta() {
 		return numeroCuenta;
@@ -34,7 +35,7 @@ public class MenuIngresarACuenta extends JFrame {
 	public MenuIngresarACuenta(int numeroCuenta) {
 		this.numeroCuenta = numeroCuenta;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 684, 465);
+		setBounds(100, 100, 684, 532);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -42,7 +43,7 @@ public class MenuIngresarACuenta extends JFrame {
 		contentPane.setLayout(null);
 
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 684, 439);
+		panelFondo.setBounds(0, 0, 684, 504);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
@@ -145,7 +146,7 @@ public class MenuIngresarACuenta extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver_1.setBounds(504, 354, 145, 50);
+		BotonVolver_1.setBounds(533, 448, 145, 50);
 		panelFondo.add(BotonVolver_1);
 
 		JButton BotonTransferenciaBancaria = new JButton("Realizar Transferencia");
@@ -170,7 +171,7 @@ public class MenuIngresarACuenta extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(MenuIngresarACuenta.class.getResource("/Imagenes/2.jpg")));
-		lblNewLabel_1.setBounds(10, 354, 103, 50);
+		lblNewLabel_1.setBounds(6, 447, 103, 50);
 		panelFondo.add(lblNewLabel_1);
 
 		JLabel separador1 = new JLabel();
@@ -196,15 +197,29 @@ public class MenuIngresarACuenta extends JFrame {
 		separador4.setOpaque(true);
 		separador4.setBounds(343, 315, 267, 2);
 		panelFondo.add(separador4);
+		
+		JLabel separador5 = new JLabel();
+		separador5.setBackground(Color.WHITE);
+		separador5.setOpaque(true);
+		separador5.setBounds(206, 429, 267, 2);
+		panelFondo.add(separador5);
 
-		JButton BotonTransferencias = new JButton("Reporte de transferencias");
-		BotonTransferencias.addActionListener(new ActionListener() {
+		botonTransferencias = new JButton("Reporte de transferencias");
+		botonTransferencias.setIcon(new ImageIcon(MenuIngresarACuenta.class.getResource("/Imagenes/icono_reporte.png")));
+		botonTransferencias.setFont(new Font("Dialog", Font.BOLD, 14));
+		botonTransferencias.setBackground(new Color(255, 147, 0));
+		botonTransferencias.setForeground(Color.BLACK);
+		botonTransferencias.setFocusPainted(false);
+		botonTransferencias.setBorderPainted(false);
+		botonTransferencias.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		botonTransferencias.setOpaque(true);
+		botonTransferencias.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new ReporteTransferencias(getNumeroCuenta()));
 				dispose();
 			}
 		});
-		BotonTransferencias.setBounds(225, 365, 215, 29);
-		panelFondo.add(BotonTransferencias);
+		botonTransferencias.setBounds(225, 342, 229, 75);
+		panelFondo.add(botonTransferencias);
 	}
 }
