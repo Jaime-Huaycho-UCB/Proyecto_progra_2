@@ -7,8 +7,12 @@ create table USUARIOS_SISTEMA(
     contrasena varchar(30) not null,
     primary key (id)
 );
-insert into USUARIOS_SISTEMA (nombre,contrasena) values ("Jaime","override");
+insert into USUARIOS_SISTEMA (nombre,contrasena) values ("sergio","pepe");
 select * from USUARIOS_SISTEMA;
+
+
+select * from TRANSFERENCIAS;
+
 
 create table TRANSACCIONES_CUENTA(
 	id int not null auto_increment,
@@ -37,7 +41,7 @@ create table CUENTAS_AHORRO(
     foreign key (tipo) references TIPOS_CUENTA(id) on delete cascade
 );
 select * from CUENTAS_AHORRO;
-select CUENTAS_AHORRO.numeroCuenta,PERSONAS.nombre,PERSONAS.apellidoPaterno,PERSONAS.apellidoMaterno,TIPOS_CUENTA.nombre as Tipo,CUENTAS_AHORRO.fechaApertura,CUENTAS_AHORRO.saldo
+select CUENTAS_AHORRO.numeroCuenta,PERSONAS.nombre,PERSONAS.apellidoPaterno,PERSONAS.apellidoMaterno,TIPOS_CUENTA.nombre as Tipo,CUENTAS_AHORRO.saldo
 FROM CUENTAS_AHORRO,TIPOS_CUENTA,PERSONAS
 where CUENTAS_AHORRO.ciPersona = PERSONAS.ci and TIPOS_CUENTA.id=CUENTAS_AHORRO.tipo;
 delete from CUENTAS_AHORRO WHERE ciPersona=8343043;
