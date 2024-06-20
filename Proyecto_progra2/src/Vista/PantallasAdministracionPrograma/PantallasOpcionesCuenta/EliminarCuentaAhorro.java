@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 import Librerias.Libreria;
 import Modelo.BaseDatos;
 import Modelo.CuentaAhorro;
-import Vista.PantallasAdministracionPrograma.PantallasTIposCuenta.EliminarTipoCuenta;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
