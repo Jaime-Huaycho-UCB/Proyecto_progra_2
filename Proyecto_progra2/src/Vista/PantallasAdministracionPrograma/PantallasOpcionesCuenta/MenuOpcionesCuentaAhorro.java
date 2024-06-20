@@ -101,6 +101,8 @@ public class MenuOpcionesCuentaAhorro extends JFrame {
 		BotonEliminarCuentasAhorro.setIcon(new ImageIcon(MenuOpcionesCuentaAhorro.class.getResource("/Imagenes/12.png")));
 		BotonEliminarCuentasAhorro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lib.CambiarPantalla(new EliminarCuentaAhorro());
+				dispose();
 			}
 		});
 		panelFondo.add(BotonEliminarCuentasAhorro);
