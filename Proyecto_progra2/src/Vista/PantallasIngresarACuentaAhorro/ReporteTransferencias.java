@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.*;
+import java.awt.Font;
 
 public class ReporteTransferencias extends JFrame {
 
@@ -39,7 +40,7 @@ public class ReporteTransferencias extends JFrame {
 	public ReporteTransferencias(int numeroCuenta) {
 		this.numeroCuenta=numeroCuenta;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 710, 664);
+		setBounds(100, 100, 710, 760);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -56,7 +57,7 @@ public class ReporteTransferencias extends JFrame {
         });
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(76, 82, 565, 219);
+		scrollPane.setBounds(76, 147, 565, 219);
 		contentPane.add(scrollPane);
 		
 		String[] atributos = {"De","Para","Fecha","Monto","Motivo"};
@@ -66,19 +67,20 @@ public class ReporteTransferencias extends JFrame {
 		scrollPane.setViewportView(TablaRecibidos);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(76, 331, 565, 219);
+		scrollPane_1.setBounds(76, 410, 565, 219);
 		contentPane.add(scrollPane_1);
 		
 		Enviados=LlenarTabla(2);
 		TablaEnviados = new JTable(Enviados,atributos);
 		scrollPane_1.setViewportView(TablaEnviados);
 		
-		JLabel lblRecibidos = new JLabel("Recibidos");
-		lblRecibidos.setBounds(327, 54, 61, 16);
+		JLabel lblRecibidos = new JLabel("RECIBIDOS\r\n");
+		lblRecibidos.setFont(new Font("Tahoma", Font.BOLD, 10));
+		lblRecibidos.setBounds(316, 121, 61, 16);
 		contentPane.add(lblRecibidos);
 		
 		JLabel lblEnviados = new JLabel("Enviados");
-		lblEnviados.setBounds(327, 313, 61, 16);
+		lblEnviados.setBounds(327, 384, 61, 16);
 		contentPane.add(lblEnviados);
 		
 		JButton BotonVolver = new JButton("Volver");
@@ -88,7 +90,7 @@ public class ReporteTransferencias extends JFrame {
 				dispose();
 			}
 		});
-		BotonVolver.setBounds(327, 578, 117, 29);
+		BotonVolver.setBounds(569, 684, 117, 29);
 		contentPane.add(BotonVolver);
 	}
 
