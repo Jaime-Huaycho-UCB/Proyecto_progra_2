@@ -10,8 +10,10 @@ create table USUARIOS_SISTEMA(
 insert into USUARIOS_SISTEMA (nombre,contrasena) values ("sergio","pepe");
 select * from USUARIOS_SISTEMA;
 
+select * from USUARIOS_SISTEMA;
 
 select * from TRANSFERENCIAS;
+delete from TRANSFERENCIAS where id = 11;
 
 
 create table TRANSACCIONES_CUENTA(
