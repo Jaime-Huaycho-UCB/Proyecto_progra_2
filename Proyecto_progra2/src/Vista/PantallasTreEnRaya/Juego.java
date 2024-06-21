@@ -11,7 +11,7 @@ import Modelo.Jugador;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import javax.swing.JLabel;
 
 public class Juego extends JFrame {
@@ -95,6 +95,18 @@ public class Juego extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				String[] botones = {"No","Si"};
+				if (lib.EntradaBotones("Seguro que desea salir?\nNo se guardaran datos del la apuesta.", botones).equals("Si")){
+					base.CerrarConexion();
+					dispose();
+				}
+            }
+        });
 		
 		A1 = new JButton("");
 		A1.addActionListener(new ActionListener() {
@@ -186,7 +198,7 @@ public class Juego extends JFrame {
 		contentPane.add(SalidaMarcadorJuagador2);
 		
 		SalidaTurno = new JLabel("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
-		SalidaTurno.setBounds(291, 619, 308, 23);
+		SalidaTurno.setBounds(291, 619, 384, 23);
 		contentPane.add(SalidaTurno);
 	}
 

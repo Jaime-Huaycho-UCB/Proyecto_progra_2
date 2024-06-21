@@ -62,7 +62,6 @@ public class MenuJuego extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		EntradaAliasJugador1 = new JTextField();
-		EntradaAliasJugador1.setText("111");
 		EntradaAliasJugador1.setBounds(150, 180, 130, 26);
 		contentPane.add(EntradaAliasJugador1);
 		EntradaAliasJugador1.setColumns(10);
@@ -72,7 +71,6 @@ public class MenuJuego extends JFrame {
 		contentPane.add(lblNewLabel_1_1);
 		
 		EntradaCuenta1 = new JTextField();
-		EntradaCuenta1.setText("12382962");
 		EntradaCuenta1.setColumns(10);
 		EntradaCuenta1.setBounds(150, 249, 130, 26);
 		contentPane.add(EntradaCuenta1);
@@ -97,7 +95,6 @@ public class MenuJuego extends JFrame {
 		contentPane.add(lblNewLabel_1_3);
 		
 		EntradaAliasJugador2 = new JTextField();
-		EntradaAliasJugador2.setText("222");
 		EntradaAliasJugador2.setColumns(10);
 		EntradaAliasJugador2.setBounds(607, 180, 130, 26);
 		contentPane.add(EntradaAliasJugador2);
@@ -107,7 +104,6 @@ public class MenuJuego extends JFrame {
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		EntradaCuenta2 = new JTextField();
-		EntradaCuenta2.setText("78918125");
 		EntradaCuenta2.setColumns(10);
 		EntradaCuenta2.setBounds(607, 249, 130, 26);
 		contentPane.add(EntradaCuenta2);
