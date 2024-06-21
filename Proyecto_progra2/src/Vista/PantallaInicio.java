@@ -7,6 +7,7 @@ import javax.swing.border.EmptyBorder;
 import Librerias.Libreria;
 import Vista.PantallasAdministracionPrograma.LogIn;
 import Vista.PantallasIngresarACuentaAhorro.SeleccionCuenta;
+import Vista.PantallasTreEnRaya.MenuJuego;
 
 // import javax.swing.JLabel;
 import java.awt.Font;
@@ -94,5 +95,15 @@ public class PantallaInicio extends JFrame {
 		txtGoliathBankGfxfgxrtxtrrt.setBounds(-25, 6, 777, 91);
 		contentPane.add(txtGoliathBankGfxfgxrtxtrrt);
 		txtGoliathBankGfxfgxrtxtrrt.setColumns(10);
+		
+		JButton BotonJugar = new JButton("Juego");
+		BotonJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lib.CambiarPantalla(new MenuJuego());
+				dispose();
+			}
+		});
+		BotonJugar.setBounds(515, 279, 117, 29);
+		contentPane.add(BotonJugar);
 	}
 }

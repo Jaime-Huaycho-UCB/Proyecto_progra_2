@@ -1,30 +1,15 @@
 package Modelo;
 
-public class CuentaAhorro {
-    public int numeroCuenta;
+public class CuentaAhorro extends CuentaComun{
     public String titular;
     public String tipoCuenta;
-    public double saldo;
 
     public CuentaAhorro(int numeroCuenta, String titular, String tipoCuenta, double saldo) {
-        this.numeroCuenta = numeroCuenta;
+        super(numeroCuenta, saldo);
         this.titular = titular;
         this.tipoCuenta = tipoCuenta;
-        this.saldo = saldo;
     }
 
-    public int getNumeroCuenta() {
-        return numeroCuenta;
-    }
-    public void setNumeroCuenta(int numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-    public double getSaldo() {
-        return saldo;
-    }
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
     public String getTipoCuenta() {
         return tipoCuenta;
     }

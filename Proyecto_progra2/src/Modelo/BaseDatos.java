@@ -7,9 +7,9 @@ import Librerias.Libreria;
 public class BaseDatos {
 
     public Libreria lib = new Libreria();
-    private final String url = "jdbc:mysql://172.20.10.11:3306/ProyectoProgra2";
-    private final String usuario = "Jaime";
-    private final String contrasena = "override";
+    private final String url = "jdbc:mysql://127.0.0.1:3306/ProyectoProgra2";
+    private final String usuario = "root";
+    private final String contrasena = "";
 
     private Connection conexion=null;
 
