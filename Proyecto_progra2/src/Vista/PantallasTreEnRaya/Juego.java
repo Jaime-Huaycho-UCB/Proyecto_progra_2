@@ -16,6 +16,7 @@ import java.awt.event.*;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class Juego extends JFrame {
 
@@ -134,6 +135,7 @@ public class Juego extends JFrame {
         });
 		
 		A1 = new JButton("");
+		A1.setFont(new Font("Dialog", Font.PLAIN, 70));
 		A1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A1, 0, 0);
@@ -143,6 +145,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A1);
 		
 		A2 = new JButton("");
+		A2.setFont(new Font("Dialog", Font.PLAIN, 70));
 		A2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A2, 0, 1);
@@ -152,6 +155,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A2);
 		
 		A3 = new JButton("");
+		A3.setFont(new Font("Dialog", Font.PLAIN, 70));
 		A3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A3, 0, 2);
@@ -161,6 +165,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A3);
 		
 		B1 = new JButton("");
+		B1.setFont(new Font("Dialog", Font.PLAIN, 70));
 		B1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B1, 1, 0);
@@ -170,6 +175,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B1);
 		
 		B2 = new JButton("");
+		B2.setFont(new Font("Dialog", Font.PLAIN, 70));
 		B2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B2, 1, 1);
@@ -179,6 +185,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B2);
 		
 		B3 = new JButton("");
+		B3.setFont(new Font("Dialog", Font.PLAIN, 70));
 		B3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B3, 1, 2);
@@ -188,6 +195,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B3);
 		
 		C1 = new JButton("");
+		C1.setFont(new Font("Dialog", Font.PLAIN, 70));
 		C1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C1, 2, 0);
@@ -197,6 +205,7 @@ public class Juego extends JFrame {
 		panelFondo.add(C1);
 		
 		C2 = new JButton("");
+		C2.setFont(new Font("Dialog", Font.PLAIN, 70));
 		C2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C2, 2, 1);
@@ -206,6 +215,7 @@ public class Juego extends JFrame {
 		panelFondo.add(C2);
 		
 		C3 = new JButton("");
+		C3.setFont(new Font("Dialog", Font.PLAIN, 70));
 		C3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C3, 2, 2);
@@ -232,10 +242,11 @@ public class Juego extends JFrame {
 		lblNewLabel.setBounds(403, 25, 102, 46);
 		panelRojo.add(lblNewLabel);
 		
-		SalidaTurno = new JLabel("Es el turno de <dynamic> con la ficha <dynamic>");
+		SalidaTurno = new JLabel("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
+		SalidaTurno.setHorizontalAlignment(SwingConstants.CENTER);
 		SalidaTurno.setForeground(new Color(255, 255, 255));
 		SalidaTurno.setFont(new Font("Times New Roman", Font.BOLD, 26));
-		SalidaTurno.setBounds(171, 617, 630, 23);
+		SalidaTurno.setBounds(154, 618, 630, 23);
 		panelFondo.add(SalidaTurno);
 		
 		lblNewLabel_2 = new JLabel("New label");
@@ -244,13 +255,12 @@ public class Juego extends JFrame {
 		panelFondo.add(lblNewLabel_2);
 		
 		lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(26, 285, 124, 99);
+		lblNewLabel_1.setBounds(43, 279, 124, 99);
 		panelFondo.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(Juego.class.getResource("/Imagenes/3.0.0.png")));
 	}
 
 	public void AccionJugar(JButton boton,int i,int j){
-		SalidaTurno.setText("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
 		boton.setText(getTurno().getFicha());
 		tablero[i][j]=getTurno().getFicha();
 		boton.setEnabled(false);
@@ -268,6 +278,7 @@ public class Juego extends JFrame {
 			jugadas+=1;
 		}
 		CambiarTurno();
+		SalidaTurno.setText("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
 	}
 	
 	public void VerificarFinPartida(){

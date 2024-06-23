@@ -240,16 +240,10 @@ public class MenuJuego extends JFrame {
 	}
 
 	public void IniciarJuego(Jugador jugador1,Jugador jugador2,int numeroRondas){
-		int iniciaJugador = lib.RandomEntero(1, 2);
 		jugador1.setFicha("X");
 		jugador2.setFicha("O");
-		if (iniciaJugador==1){
-			lib.CambiarPantalla(new Juego(jugador1, jugador2, numeroRondas,1), base);
-			dispose();
-		}else{
-			lib.CambiarPantalla(new Juego(jugador2, jugador1, numeroRondas,1), base);
-			dispose();
-		}
+		lib.CambiarPantalla(new Juego(jugador1, jugador2, numeroRondas,1), base);
+		dispose();
 	}
 
 	public boolean ApuestaValida(CuentaComun cuenta,double apuesta){
