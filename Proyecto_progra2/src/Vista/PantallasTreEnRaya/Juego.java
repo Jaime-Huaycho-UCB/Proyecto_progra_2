@@ -11,8 +11,11 @@ import Modelo.Jugador;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class Juego extends JFrame {
 
@@ -73,6 +76,9 @@ public class Juego extends JFrame {
 
 	public int jugadas = 0;
 	private JLabel SalidaTurno;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
 
 	public Juego(Jugador jugador1,Jugador jugador2,int numeroRondas,int ronda) {
 		this.jugador1=jugador1;
@@ -95,6 +101,25 @@ public class Juego extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
+		JPanel panelFondo = new JPanel();
+		panelFondo.setBounds(0, 0, 902, 688);
+		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
+		contentPane.add(panelFondo);
+		panelFondo.setLayout(null);
+
+		JPanel panelRojo = new JPanel();
+		panelRojo.setBounds(0, -11, 892, 111);
+		panelRojo.setBackground(new Color(183, 0, 0));
+		panelFondo.add(panelRojo);
+		panelRojo.setLayout(null);
+
+		JLabel separadorTitulo = new JLabel();
+		separadorTitulo.setBackground(Color.WHITE);
+		separadorTitulo.setOpaque(true);
+		separadorTitulo.setBounds(10, 96, 872, 9);
+		panelRojo.add(separadorTitulo);
 
 		addWindowListener(new WindowAdapter() {
             @Override
@@ -115,7 +140,7 @@ public class Juego extends JFrame {
 			}
 		});
 		A1.setBounds(221, 105, 150, 150);
-		contentPane.add(A1);
+		panelFondo.add(A1);
 		
 		A2 = new JButton("");
 		A2.addActionListener(new ActionListener() {
@@ -124,7 +149,7 @@ public class Juego extends JFrame {
 			}
 		});
 		A2.setBounds(383, 105, 150, 150);
-		contentPane.add(A2);
+		panelFondo.add(A2);
 		
 		A3 = new JButton("");
 		A3.addActionListener(new ActionListener() {
@@ -133,7 +158,7 @@ public class Juego extends JFrame {
 			}
 		});
 		A3.setBounds(545, 105, 150, 150);
-		contentPane.add(A3);
+		panelFondo.add(A3);
 		
 		B1 = new JButton("");
 		B1.addActionListener(new ActionListener() {
@@ -142,7 +167,7 @@ public class Juego extends JFrame {
 			}
 		});
 		B1.setBounds(221, 267, 150, 150);
-		contentPane.add(B1);
+		panelFondo.add(B1);
 		
 		B2 = new JButton("");
 		B2.addActionListener(new ActionListener() {
@@ -151,7 +176,7 @@ public class Juego extends JFrame {
 			}
 		});
 		B2.setBounds(383, 267, 150, 150);
-		contentPane.add(B2);
+		panelFondo.add(B2);
 		
 		B3 = new JButton("");
 		B3.addActionListener(new ActionListener() {
@@ -160,7 +185,7 @@ public class Juego extends JFrame {
 			}
 		});
 		B3.setBounds(545, 267, 150, 150);
-		contentPane.add(B3);
+		panelFondo.add(B3);
 		
 		C1 = new JButton("");
 		C1.addActionListener(new ActionListener() {
@@ -169,7 +194,7 @@ public class Juego extends JFrame {
 			}
 		});
 		C1.setBounds(221, 429, 150, 150);
-		contentPane.add(C1);
+		panelFondo.add(C1);
 		
 		C2 = new JButton("");
 		C2.addActionListener(new ActionListener() {
@@ -178,7 +203,7 @@ public class Juego extends JFrame {
 			}
 		});
 		C2.setBounds(383, 429, 150, 150);
-		contentPane.add(C2);
+		panelFondo.add(C2);
 		
 		C3 = new JButton("");
 		C3.addActionListener(new ActionListener() {
@@ -187,19 +212,41 @@ public class Juego extends JFrame {
 			}
 		});
 		C3.setBounds(545, 429, 150, 150);
-		contentPane.add(C3);
+		panelFondo.add(C3);
 		
 		JLabel SalidaMarcadorJuagador1 = new JLabel(jugador1.getAlias()+" : "+jugador1.getRondasGanadas());
-		SalidaMarcadorJuagador1.setBounds(238, 38, 142, 16);
-		contentPane.add(SalidaMarcadorJuagador1);
+		SalidaMarcadorJuagador1.setForeground(new Color(255, 255, 255));
+		SalidaMarcadorJuagador1.setFont(new Font("Stencil", Font.PLAIN, 17));
+		SalidaMarcadorJuagador1.setBounds(164, 38, 216, 16);
+		panelRojo.add(SalidaMarcadorJuagador1);
 		
 		JLabel SalidaMarcadorJuagador2 = new JLabel(jugador2.getAlias()+" : "+jugador2.getRondasGanadas());
-		SalidaMarcadorJuagador2.setBounds(560, 38, 135, 16);
-		contentPane.add(SalidaMarcadorJuagador2);
+		SalidaMarcadorJuagador2.setForeground(new Color(255, 255, 255));
+		SalidaMarcadorJuagador2.setFont(new Font("Stencil", Font.PLAIN, 17));
+		SalidaMarcadorJuagador2.setBounds(584, 39, 135, 16);
+		panelRojo.add(SalidaMarcadorJuagador2);
 		
-		SalidaTurno = new JLabel("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
-		SalidaTurno.setBounds(291, 619, 384, 23);
-		contentPane.add(SalidaTurno);
+		lblNewLabel = new JLabel("VS");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 46));
+		lblNewLabel.setBounds(403, 25, 102, 46);
+		panelRojo.add(lblNewLabel);
+		
+		SalidaTurno = new JLabel("Es el turno de <dynamic> con la ficha <dynamic>");
+		SalidaTurno.setForeground(new Color(255, 255, 255));
+		SalidaTurno.setFont(new Font("Times New Roman", Font.BOLD, 26));
+		SalidaTurno.setBounds(171, 617, 630, 23);
+		panelFondo.add(SalidaTurno);
+		
+		lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(Juego.class.getResource("/Imagenes/3.0.0.png")));
+		lblNewLabel_2.setBounds(743, 285, 124, 86);
+		panelFondo.add(lblNewLabel_2);
+		
+		lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(26, 285, 124, 99);
+		panelFondo.add(lblNewLabel_1);
+		lblNewLabel_1.setIcon(new ImageIcon(Juego.class.getResource("/Imagenes/3.0.0.png")));
 	}
 
 	public void AccionJugar(JButton boton,int i,int j){
