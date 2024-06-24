@@ -7,7 +7,7 @@ import Librerias.Libreria;
 public class BaseDatos {
 
     public Libreria lib = new Libreria();
-    private final String url = "jdbc:mysql://127.0.0.1:3306/ProyectoProgra2";
+    private final String url = "jdbc:mysql://localhost:3306/ProyectoProgra2";
     private final String usuario = "root";
     private final String contrasena = "";
 
@@ -60,7 +60,6 @@ public class BaseDatos {
         while (true) {
             try {
                 getConexion().close();
-                setConexion(null);
                 break;
             } catch (SQLException e) {
                 opcion=lib.EntradaBotones(mensaje + e.getMessage()+"\n"+"Desea reintentar?", botones);

@@ -75,7 +75,7 @@ public class Juego extends JFrame {
 
 	public String[][] tablero = new String[3][3];
 
-	public int jugadas = 0;
+	public int jugadas = 1;
 	private JLabel SalidaTurno;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
@@ -270,18 +270,20 @@ public class Juego extends JFrame {
 			}else{
 				getJugador2().AumentarRondasGano();
 			}
-			VerificarFinPartida();
+			VerificarFinPartida(1);
 		}else if (jugadas==9){
+			
 			lib.MostrarMensaje("No existe ganador en esta ronda");
-			VerificarFinPartida();
+			VerificarFinPartida(0);
 		}else{
 			jugadas+=1;
 		}
+		System.out.println(jugadas);
 		CambiarTurno();
 		SalidaTurno.setText("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
 	}
 	
-	public void VerificarFinPartida(){
+	public void VerificarFinPartida(int i){
 		if (getNumeroRondas()==getRonda()){
 			if (getJugador1().getRondasGanadas()==getJugador2().getRondasGanadas()){
 				lib.MostrarMensaje("Nadie gano la apuesta, todos matienen su dinero");
@@ -297,7 +299,7 @@ public class Juego extends JFrame {
 				dispose();
 			}
 		}else{
-			SiguienteRonda();
+			SiguienteRonda(i);
 		}
 	}
 
@@ -356,8 +358,10 @@ public class Juego extends JFrame {
 		}
 	}
 
-	public void SiguienteRonda(){
-		lib.MostrarMensaje("El ganador de esta ronda es "+getTurno().getAlias());
+	public void SiguienteRonda(int i){
+		if (i == 1){
+			lib.MostrarMensaje("El ganador de esta ronda es "+getTurno().getAlias());
+		}
 		lib.CambiarPantalla(new Juego(getJugador1(), getJugador2(), getNumeroRondas(),getRonda()+1),base);
 		dispose();
 	}

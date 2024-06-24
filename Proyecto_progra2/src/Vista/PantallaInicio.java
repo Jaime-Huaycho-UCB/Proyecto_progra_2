@@ -19,6 +19,8 @@ import java.awt.Color;
 // import javax.swing.ImageIcon;
 // import java.awt.Canvas;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 // import javax.swing.DropMode;
 
 public class PantallaInicio extends JFrame {
@@ -80,7 +82,7 @@ public class PantallaInicio extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(284, 237, 140, 45);
+		btnNewButton.setBounds(565, 304, 140, 45);
 		contentPane.add(btnNewButton);
 		
 		
@@ -97,13 +99,20 @@ public class PantallaInicio extends JFrame {
 		txtGoliathBankGfxfgxrtxtrrt.setColumns(10);
 		
 		JButton BotonJugar = new JButton("Juego");
+		BotonJugar.setOpaque(true);
+		BotonJugar.setFont(new Font("Courier New", Font.BOLD, 20));
 		BotonJugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lib.CambiarPantalla(new MenuJuego());
 				dispose();
 			}
 		});
-		BotonJugar.setBounds(515, 279, 117, 29);
+		BotonJugar.setBounds(230, 233, 259, 71);
 		contentPane.add(BotonJugar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(PantallaInicio.class.getResource("/Imagenes/2.jpg")));
+		lblNewLabel.setBounds(23, 309, 102, 40);
+		contentPane.add(lblNewLabel);
 	}
 }

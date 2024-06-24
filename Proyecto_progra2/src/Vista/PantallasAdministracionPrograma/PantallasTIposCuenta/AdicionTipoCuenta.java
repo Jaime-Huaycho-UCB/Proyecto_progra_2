@@ -192,7 +192,6 @@ public class AdicionTipoCuenta extends JFrame {
 			accion.setDouble(3, interes);
 			int ingresar = accion.executeUpdate();
 			if (ingresar > 0) {
-				base.CerrarConexion();
 				lib.CambiarPantalla(new MenuTipoCuenta(),base);
 				dispose();
 				lib.MostrarMensaje("Se completo la adicion exitosamente");
