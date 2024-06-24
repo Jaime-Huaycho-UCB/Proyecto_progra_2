@@ -206,7 +206,6 @@ public class TransfereciasBancarias extends JFrame {
 
 		
 	}
-
 	public boolean CiExistente(int ci){
 		String query = "SELECT Count(0) FROM CUENTAS_AHORRO WHERE numeroCuenta = "+ci;
 		try {

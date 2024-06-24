@@ -135,7 +135,7 @@ public class Juego extends JFrame {
         });
 		
 		A1 = new JButton("");
-		A1.setFont(new Font("Dialog", Font.PLAIN, 70));
+		A1.setFont(new Font("Courier New", Font.ITALIC, 70));
 		A1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A1, 0, 0);
@@ -145,7 +145,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A1);
 		
 		A2 = new JButton("");
-		A2.setFont(new Font("Dialog", Font.PLAIN, 70));
+		A2.setFont(new Font("Courier New", Font.ITALIC, 70));
 		A2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A2, 0, 1);
@@ -155,7 +155,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A2);
 		
 		A3 = new JButton("");
-		A3.setFont(new Font("Dialog", Font.PLAIN, 70));
+		A3.setFont(new Font("Courier New", Font.ITALIC, 70));
 		A3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(A3, 0, 2);
@@ -165,7 +165,7 @@ public class Juego extends JFrame {
 		panelFondo.add(A3);
 		
 		B1 = new JButton("");
-		B1.setFont(new Font("Dialog", Font.PLAIN, 70));
+		B1.setFont(new Font("Courier New", Font.ITALIC, 70));
 		B1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B1, 1, 0);
@@ -175,7 +175,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B1);
 		
 		B2 = new JButton("");
-		B2.setFont(new Font("Dialog", Font.PLAIN, 70));
+		B2.setFont(new Font("Courier New", Font.ITALIC, 70));
 		B2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B2, 1, 1);
@@ -185,7 +185,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B2);
 		
 		B3 = new JButton("");
-		B3.setFont(new Font("Dialog", Font.PLAIN, 70));
+		B3.setFont(new Font("Courier New", Font.ITALIC, 70));
 		B3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(B3, 1, 2);
@@ -195,7 +195,7 @@ public class Juego extends JFrame {
 		panelFondo.add(B3);
 		
 		C1 = new JButton("");
-		C1.setFont(new Font("Dialog", Font.PLAIN, 70));
+		C1.setFont(new Font("Courier New", Font.ITALIC, 70));
 		C1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C1, 2, 0);
@@ -205,7 +205,7 @@ public class Juego extends JFrame {
 		panelFondo.add(C1);
 		
 		C2 = new JButton("");
-		C2.setFont(new Font("Dialog", Font.PLAIN, 70));
+		C2.setFont(new Font("Courier New", Font.ITALIC, 70));
 		C2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C2, 2, 1);
@@ -215,7 +215,7 @@ public class Juego extends JFrame {
 		panelFondo.add(C2);
 		
 		C3 = new JButton("");
-		C3.setFont(new Font("Dialog", Font.PLAIN, 70));
+		C3.setFont(new Font("Courier New", Font.ITALIC, 70));
 		C3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionJugar(C3, 2, 2);
@@ -226,36 +226,36 @@ public class Juego extends JFrame {
 		
 		JLabel SalidaMarcadorJuagador1 = new JLabel(jugador1.getAlias()+" : "+jugador1.getRondasGanadas());
 		SalidaMarcadorJuagador1.setForeground(new Color(255, 255, 255));
-		SalidaMarcadorJuagador1.setFont(new Font("Stencil", Font.PLAIN, 17));
-		SalidaMarcadorJuagador1.setBounds(164, 38, 216, 16);
+		SalidaMarcadorJuagador1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 19));
+		SalidaMarcadorJuagador1.setBounds(176, 49, 216, 16);
 		panelRojo.add(SalidaMarcadorJuagador1);
 		
 		JLabel SalidaMarcadorJuagador2 = new JLabel(jugador2.getAlias()+" : "+jugador2.getRondasGanadas());
 		SalidaMarcadorJuagador2.setForeground(new Color(255, 255, 255));
-		SalidaMarcadorJuagador2.setFont(new Font("Stencil", Font.PLAIN, 17));
-		SalidaMarcadorJuagador2.setBounds(584, 39, 135, 16);
+		SalidaMarcadorJuagador2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 19));
+		SalidaMarcadorJuagador2.setBounds(585, 49, 153, 16);
 		panelRojo.add(SalidaMarcadorJuagador2);
 		
 		lblNewLabel = new JLabel("VS");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 46));
-		lblNewLabel.setBounds(403, 25, 102, 46);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 46));
+		lblNewLabel.setBounds(431, 38, 102, 46);
 		panelRojo.add(lblNewLabel);
 		
 		SalidaTurno = new JLabel("Es el turno de "+getTurno().getAlias()+" con la ficha "+getTurno().getFicha());
 		SalidaTurno.setHorizontalAlignment(SwingConstants.CENTER);
 		SalidaTurno.setForeground(new Color(255, 255, 255));
-		SalidaTurno.setFont(new Font("Times New Roman", Font.BOLD, 26));
-		SalidaTurno.setBounds(154, 618, 630, 23);
+		SalidaTurno.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 27));
+		SalidaTurno.setBounds(43, 618, 849, 23);
 		panelFondo.add(SalidaTurno);
 		
 		lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon(Juego.class.getResource("/Imagenes/3.0.0.png")));
-		lblNewLabel_2.setBounds(743, 285, 124, 86);
+		lblNewLabel_2.setBounds(768, 285, 124, 86);
 		panelFondo.add(lblNewLabel_2);
 		
 		lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(43, 279, 124, 99);
+		lblNewLabel_1.setBounds(54, 279, 124, 99);
 		panelFondo.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(Juego.class.getResource("/Imagenes/3.0.0.png")));
 	}

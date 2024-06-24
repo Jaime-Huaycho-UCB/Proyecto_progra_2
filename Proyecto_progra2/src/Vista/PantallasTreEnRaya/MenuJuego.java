@@ -41,7 +41,7 @@ public class MenuJuego extends JFrame {
 
 	public MenuJuego() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 825, 580);
+		setBounds(100, 100, 797, 503);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -51,7 +51,7 @@ public class MenuJuego extends JFrame {
 		
 
 		JPanel panelFondo = new JPanel();
-		panelFondo.setBounds(0, 0, 821, 590);
+		panelFondo.setBounds(0, 0, 839, 590);
 		panelFondo.setBackground(new Color(67, 80, 169)); // Azul oscuro
 		contentPane.add(panelFondo);
 		panelFondo.setLayout(null);
@@ -65,7 +65,7 @@ public class MenuJuego extends JFrame {
 		JLabel separadorTitulo = new JLabel();
 		separadorTitulo.setBackground(Color.WHITE);
 		separadorTitulo.setOpaque(true);
-		separadorTitulo.setBounds(10, 99, 800, 6);
+		separadorTitulo.setBounds(0, 98, 800, 6);
 		panelRojo.add(separadorTitulo);
 
 		addWindowListener(new WindowAdapter() {
@@ -80,83 +80,74 @@ public class MenuJuego extends JFrame {
 		JLabel lblNewLabel = new JLabel("Bievenido al juego de Tres en Raya");
 		lblNewLabel.setIcon(new ImageIcon(MenuJuego.class.getResource("/Imagenes/icono_jueg02.0.png")));
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(6, 46, 813, 58);
 		panelRojo.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("Goliath National Bank");
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblNewLabel_2.setBounds(10, 23, 200, 13);
+		lblNewLabel_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 18));
+		lblNewLabel_2.setBounds(10, 23, 231, 13);
 		panelRojo.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("Alias:");
-		lblNewLabel_1.setBounds(77, 185, 61, 16);
+		lblNewLabel_1.setBounds(67, 157, 61, 16);
 		lblNewLabel_1.setBackground(new Color(255, 255, 255));
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		lblNewLabel_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblNewLabel_1);
 		
 		EntradaAliasJugador1 = new JTextField();
-		EntradaAliasJugador1.setBounds(150, 180, 130, 26);
+		EntradaAliasJugador1.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaAliasJugador1.setBounds(150, 151, 130, 26);
 		panelFondo.add(EntradaAliasJugador1);
 		EntradaAliasJugador1.setColumns(10);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Cuenta:");
-		lblNewLabel_1_1.setBounds(77, 254, 61, 16);
+		lblNewLabel_1_1.setBounds(67, 211, 70, 16);
 		lblNewLabel_1_1.setBackground(new Color(255, 255, 255));
-		lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblNewLabel_1_1);
 		
 		EntradaCuenta1 = new JTextField();
-		EntradaCuenta1.setBounds(150, 249, 130, 26);
+		EntradaCuenta1.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaCuenta1.setBounds(150, 205, 130, 26);
 		EntradaCuenta1.setColumns(10);
 		panelFondo.add(EntradaCuenta1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Apuesta:");
-		lblNewLabel_1_2.setBounds(77, 323, 61, 16);
-		lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_1_2.setBounds(67, 269, 80, 16);
+		lblNewLabel_1_2.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
 		panelFondo.add(lblNewLabel_1_2);
 		
 		EntradaApuesta1 = new JTextField();
-		EntradaApuesta1.setBounds(150, 318, 130, 26);
+		EntradaApuesta1.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaApuesta1.setBounds(150, 263, 130, 26);
 		EntradaApuesta1.setColumns(10);
 		panelFondo.add(EntradaApuesta1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("VS");
-		lblNewLabel_2_1.setBounds(314, 210, 187, 93);
+		lblNewLabel_2_1.setBounds(298, 166, 187, 93);
 		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1.setFont(new Font("Felix Titling", Font.BOLD, 65));
+		lblNewLabel_2_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 65));
 		panelFondo.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Alias:");
-		lblNewLabel_1_3.setBounds(534, 185, 61, 16);
-		lblNewLabel_1_3.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		panelFondo.add(lblNewLabel_1_3);
-		
 		EntradaAliasJugador2 = new JTextField();
-		EntradaAliasJugador2.setBounds(607, 180, 130, 26);
+		EntradaAliasJugador2.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaAliasJugador2.setBounds(607, 151, 130, 26);
 		EntradaAliasJugador2.setColumns(10);
 		panelFondo.add(EntradaAliasJugador2);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("Cuenta:");
-		lblNewLabel_1_1_1.setBounds(534, 254, 61, 16);
-		lblNewLabel_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		panelFondo.add(lblNewLabel_1_1_1);
-		
 		EntradaCuenta2 = new JTextField();
-		EntradaCuenta2.setBounds(607, 249, 130, 26);
+		EntradaCuenta2.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaCuenta2.setBounds(607, 205, 130, 26);
 		EntradaCuenta2.setColumns(10);
 		panelFondo.add(EntradaCuenta2);
 		
-		JLabel lblNewLabel_1_2_1 = new JLabel("Apuesta:");
-		lblNewLabel_1_2_1.setBounds(534, 323, 61, 16);
-		lblNewLabel_1_2_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		panelFondo.add(lblNewLabel_1_2_1);
-		
 		EntradaApuesta2 = new JTextField();
-		EntradaApuesta2.setBounds(607, 318, 130, 26);
+		EntradaApuesta2.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaApuesta2.setBounds(607, 263, 130, 26);
 		EntradaApuesta2.setColumns(10);
 		panelFondo.add(EntradaApuesta2);
 		
@@ -168,9 +159,9 @@ public class MenuJuego extends JFrame {
 		BotonEmpezarJuego.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		BotonEmpezarJuego.setIcon(new ImageIcon(SeleccionCuenta.class.getResource("/Imagenes/icono_ingresar.png")));
 		BotonEmpezarJuego.setForeground(new Color(0, 0, 0));
-		BotonEmpezarJuego.setFont(new Font("Tahoma", Font.BOLD, 13));
+		BotonEmpezarJuego.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 13));
 		BotonEmpezarJuego.setIcon(new ImageIcon(MenuJuego.class.getResource("/Imagenes/icono_juego.png")));
-		BotonEmpezarJuego.setBounds(295, 431, 244, 29);
+		BotonEmpezarJuego.setBounds(280, 387, 244, 29);
 		BotonEmpezarJuego.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccionIniciarJuego();
@@ -179,7 +170,7 @@ public class MenuJuego extends JFrame {
 		panelFondo.add(BotonEmpezarJuego);
 		
 		JButton BotonVolver = new JButton("VOLVER");
-		BotonVolver.setBounds(607, 489, 179, 29);
+		BotonVolver.setBounds(583, 432, 179, 29);
 		BotonVolver.setOpaque(true);
 		BotonVolver.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 14));
 		BotonVolver.setBackground(new Color(192, 57, 43));
@@ -197,19 +188,37 @@ public class MenuJuego extends JFrame {
 		panelFondo.add(BotonVolver);
 		
 		EntradaRondas = new JTextField();
-		EntradaRondas.setBounds(420, 380, 130, 26);
+		EntradaRondas.setFont(new Font("Courier New", Font.ITALIC, 13));
+		EntradaRondas.setBounds(383, 329, 130, 26);
 		panelFondo.add(EntradaRondas);
 		EntradaRondas.setColumns(10);
 		
 		JLabel texto = new JLabel("Numero de rondas:");
-		texto.setFont(new Font("Times New Roman", Font.BOLD, 17));
-		texto.setBounds(239, 382, 158, 16);
+		texto.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 16));
+		texto.setBounds(203, 333, 179, 16);
 		panelFondo.add(texto);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		lblNewLabel_3.setIcon(new ImageIcon(MenuJuego.class.getResource("/Imagenes/2.jpg")));
-		lblNewLabel_3.setBounds(10, 479, 99, 48);
+		lblNewLabel_3.setBounds(16, 420, 99, 48);
 		panelFondo.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Alias:");
+		lblNewLabel_1_3.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1_3.setBackground(Color.WHITE);
+		lblNewLabel_1_3.setBounds(525, 157, 61, 16);
+		panelFondo.add(lblNewLabel_1_3);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Cuenta:");
+		lblNewLabel_1_1_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1_1_1.setBackground(Color.WHITE);
+		lblNewLabel_1_1_1.setBounds(525, 211, 70, 16);
+		panelFondo.add(lblNewLabel_1_1_1);
+		
+		JLabel lblNewLabel_1_2_1 = new JLabel("Apuesta:");
+		lblNewLabel_1_2_1.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1_2_1.setBounds(525, 269, 80, 16);
+		panelFondo.add(lblNewLabel_1_2_1);
 	}
 
 	public void AccionIniciarJuego(){
