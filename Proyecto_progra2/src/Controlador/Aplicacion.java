@@ -6,6 +6,8 @@ import Modelo.BaseDatos;
 import Vista.PantallaInicio;
 public class Aplicacion {
 
+    // pequeno cambio
+
     public static Libreria lib = new Libreria();
     public static BaseDatos base = new BaseDatos();
 
